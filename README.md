@@ -10,8 +10,7 @@ helt fra bunden over ca. ~3 måneder med ~10 timer om ugen.
 **Mål:**  
 At bygge en **lille transformer-baseret sprogmodel** (1M–10M parametre), som kan lave basal tekstgenerering og chat-lignende svar.
 
-## Problemformulering
-
+**Problemformulering:**
 Hvordan kan man bygge en lokal AI-chatbot fra bunden, og hvilke tekniske udfordringer opstår undervejs?
 
 **Teknologier:**
