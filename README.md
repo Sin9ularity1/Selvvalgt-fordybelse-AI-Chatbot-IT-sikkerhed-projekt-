@@ -122,6 +122,8 @@ Implementer tekstgenerering:
 Projektet er begrænset af hardware, tid og modelstørrelse.
 Der fokuseres på læring og forståelse frem for maksimal performance.
 
+--- 
+
 ## 5. Ekstra Mål (Valgfrit)
 
 - Tilføj LoRA fine-tuning  
