@@ -8,7 +8,7 @@ helt fra bunden over ca. 3 måneder med ~10 timer om ugen.
 ## 1. Projektoversigt
 
 **Mål:**  
-At bygge en **lille transformer-baseret sprogmodel** (1M–10M parametre), som kan lave basal tekstgenerering og chat-lignende svar.
+At bygge en **lille transformer-baseret sprogmodel** (1M–10M parametre), som kan lave basal tekstgenerering og chatlignende svar.
 
 **Problemformulering:**  
 Hvordan kan man bygge en lokal AI-chatbot fra bunden, og hvilke tekniske udfordringer opstår undervejs?
@@ -28,7 +28,20 @@ Hvordan kan man bygge en lokal AI-chatbot fra bunden, og hvilke tekniske udfordr
 
 ---
 
-## 2. Milepæle og Tidsplan
+## 2. Metode
+
+Projektet gennemføres iterativt med fokus på små delmål.
+Hver komponent udvikles separat og integreres løbende.
+
+Der arbejdes med:
+
+- Eksperimentel udvikling
+- Dokumentation undervejs
+- Løbende test og evaluering
+
+---
+
+## 3. Milepæle og Tidsplan
 
 ### **Uge 1–2 — Tokenizer**
 
@@ -104,7 +117,12 @@ Implementer tekstgenerering:
 
 ---
 
-## 3. Ekstra Mål (Valgfrit)
+## 4. Begrænsninger
+
+Projektet er begrænset af hardware, tid og modelstørrelse.
+Der fokuseres på læring og forståelse frem for maksimal performance.
+
+## 5. Ekstra Mål (Valgfrit)
 
 - Tilføj LoRA fine-tuning  
 - Tilføj GUI  
@@ -114,7 +132,7 @@ Implementer tekstgenerering:
 
 ---
 
-## 4. Forventet Læringsudbytte
+## 6. Forventet Læringsudbytte
 
 - Forstå tokenisering på et dybt niveau  
 - Lære transformer-arkitektur  
