@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Chatbot Projekt</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<header>
+    <nav>
+        <div class="logo">AI Chatbot Projekt</div>
+        <ul class="nav-links">
+            <li><a href="#om">Om Projektet</a></li>
+            <li><a href="#teknologier">Teknologier</a></li>
+            <li><a href="#maal">Projektmål</a></li>
+            <li><a href="#milepaele">Milepæle</a></li>
+            <li><a href="#metode">Metode</a></li>
+            <li><a href="#læring">Læringsudbytte</a></li>
+            <li><a href="#forfatter">Forfatter</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <section id="om">
+        <h1>Velkommen</h1>
+        <p>Velkommen til mit skoleprojekt omkring udviklingen af en lokal AI-chatbot.</p>
+        <p>Projektet gennemføres over ca. 3 måneder med ca. 10 timers arbejde om ugen og giver en praktisk forståelse for opbygning af AI-modeller, tokenisering og transformer-arkitektur.</p>
+    </section>
+
+    <section id="teknologier">
+        <h2>Teknologier</h2>
+        <ul>
+            <li><strong>Python</strong> – programmering og scripting</li>
+            <li><strong>NumPy</strong> – grundlæggende matematik og datahåndtering</li>
+            <li><strong>PyTorch</strong> – træning af modellen (valgfrit, men anbefalet)</li>
+            <li><strong>Ingen eksterne LLM’er</strong> – alt er udviklet lokalt fra bunden</li>
+        </ul>
+    </section>
+
+    <section id="maal">
+        <h2>Projektmål</h2>
+        <ul>
+            <li>Bygge en <strong>transformer-baseret sprogmodel</strong> (1M–10M parametre)</li>
+            <li>Implementere en <strong>Byte-Pair Encoding (BPE)</strong> tokenizer</li>
+            <li>Forberede og behandle tekstdatasæt</li>
+            <li>Udvikle et simpelt chat-interface til interaktion med modellen</li>
+            <li>Lære de tekniske og praktiske aspekter af at bygge en AI fra bunden</li>
+        </ul>
+    </section>
+
+    <section id="milepaele">
+        <h2>Milepæle og Tidsplan</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Uge</th>
+                    <th>Aktivitet</th>
+                    <th>Output</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>1–2</td><td>Implementering af BPE tokenizer</td><td>tokenizer.py, vocab.json</td></tr>
+                <tr><td>3–4</td><td>Datasæt indsamling og forbehandling</td><td>dataset.py, train_data.npy</td></tr>
+                <tr><td>5–7</td><td>Opbygning af lille transformer</td><td>model.py</td></tr>
+                <tr><td>8–10</td><td>Træningsloop og evaluering</td><td>train.py, model.pt</td></tr>
+                <tr><td>11</td><td>Inferens pipeline og tekstgenerering</td><td>generate.py</td></tr>
+                <tr><td>12</td><td>Simpelt chat-interface</td><td>chat.py</td></tr>
+            </tbody>
+        </table>
+    </section>
+
+    <section id="metode">
+        <h2>Metode</h2>
+        <p>Projektet udvikles iterativt med fokus på små delmål. Hver komponent udvikles separat og integreres løbende.</p>
+        <ul>
+            <li>Eksperimentel udvikling</li>
+            <li>Løbende dokumentation</li>
+            <li>Test og evaluering undervejs</li>
+        </ul>
+
+        <h3>Begrænsninger</h3>
+        <p>Projektet er begrænset af hardware, tid og modelstørrelse. Fokus er på læring og forståelse frem for maksimal performance.</p>
+
+        <h3>Ekstra Mål (Valgfrit)</h3>
+        <ul>
+            <li>LoRA fine-tuning</li>
+            <li>Grafisk brugerinterface (GUI)</li>
+            <li>Hukommelsesbuffer til modelinteraktion</li>
+            <li>Destillering af modellen for optimering</li>
+            <li>Justering af emotionelle og stilistiske indstillinger</li>
+        </ul>
+    </section>
+
+    <section id="læring">
+        <h2>Forventet Læringsudbytte</h2>
+        <ul>
+            <li>Dybtgående forståelse af tokenisering</li>
+            <li>Kendskab til transformer-arkitektur</li>
+            <li>Evnen til at bygge et neuralt netværk fra bunden</li>
+            <li>Forståelse af træningsdynamikker</li>
+            <li>Implementering af en minimal, funktionel sprogmodel</li>
+        </ul>
+    </section>
+
+    <section id="forfatter">
+        <h2>Forfatter</h2>
+        <p><strong>Reuben Badham</strong></p>
+        <p>Uddannelse: IT-sikkerhed</p>
+        <p>Lokation: Danmark</p>
+        <p>Formål: Praktisk forståelse af AI-modeller, transformer-arkitektur og udvikling af lokale AI-løsninger</p>
+    </section>
+</main>
+
+<footer>
+    <p>&copy; 2026 Reuben Badham</p>
+</footer>
+
+</body>
+</html>
