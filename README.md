@@ -146,28 +146,27 @@ Der fokuseres på læring og forståelse frem for maksimal performance.
 
 ## 7. Læringsmål
 
-# AI & Machine Learning
+### AI & Machine Learning
 - Forklare hvordan tokenisering fungerer (BPE) og selv implementere en simpel tokenizer.
 - Redegøre for transformer-arkitekturens hoveddele (embeddings, attention, feed-forward, layer normalization).
 - Forklare hvordan en sprogmodel trænes (loss, backpropagation, epochs).
 - Implementere en lille transformer-model fra bunden.
 - Forklare forskellen mellem træning og inferens.
 ---
-# Programmering
+### Programmering
 - Udvikle et større Python-projekt struktureret i moduler.
 - Arbejde med NumPy-arrays og tensors.
 - Bruge PyTorch til at bygge og træne neurale netværk.
 - Implementere egne træningsloops.
-
-Arbejde med filformater (json, npy, pt).
+- Arbejde med filformater (json, npy, pt).
 ---
-# IT-sikkerhed & ansvarlig AI
+### IT-sikkerhed & ansvarlig AI
 - Reflektere over datasæt, bias og modelbegrænsninger.
 - Forstå sikkerhedsrisici ved lokale AI-modeller.
 - Diskutere etiske aspekter ved AI-chatbots.
 - Forklare hvordan simple AI-systemer kan misbruges eller manipuleres.
 --- 
-# Projektarbejde 
+### Projektarbejde 
 - Planlægge et teknisk projekt med milepæle
 - Dokumentere kode og proces løbende
 - Arbejde iterativt med fejlretning og forbedringer
