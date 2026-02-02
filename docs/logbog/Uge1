@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logbog - Uge X</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+    <nav>
+        <div class="logo">AI Chatbot Projekt</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Hjem</a></li>
+            <li><a href="about.html">Om</a></li>
+            <li><a href="logbog.html">Logbog</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <section class="logbog-week">
+        <h1>Uge X – Titel på Ugen</h1>
+
+        <h2>Opsummering</h2>
+        <p>Beskriv kort hvad du har arbejdet med denne uge, udfordringer og resultater.</p>
+
+        <h2>Opgaver / Tasks</h2>
+        <ul>
+            <li>Opgave 1 – kort beskrivelse</li>
+            <li>Opgave 2 – kort beskrivelse</li>
+            <li>Opgave 3 – kort beskrivelse</li>
+        </ul>
+
+        <h2>Leverancer / Output</h2>
+        <ul>
+            <li><code>filnavn.py</code> – beskrivelse</li>
+            <li><code>dataset.csv</code> – beskrivelse</li>
+            <li><code>diagram.png</code> – beskrivelse</li>
+        </ul>
+
+        <h2>Billeder / Diagrammer</h2>
+        <div class="week-images">
+            <img src="billeder/diagram1.png" alt="Diagram 1">
+            <img src="billeder/skærmbillede.png" alt="Skærmbillede">
+        </div>
+
+        <p><a href="logbog.html">Tilbage til Logbog</a></p>
+    </section>
+</main>
+
+<footer>
+   
+</footer>
+</body>
+</html>
