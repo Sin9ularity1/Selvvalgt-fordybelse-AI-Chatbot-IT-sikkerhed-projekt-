@@ -1,19 +1,20 @@
 /* --- Google Fonts --- */
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&family=Space+Grotesk:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&display=swap');
 
 /* --- Base & Typography --- */
 :root {
-    --bg-color: #0D1117; /* GitHub Dark Background */
-    --text-color: #C9D1D9; /* GitHub Dark Text */
-    --accent-color: #58A6FF; /* GitHub Dark Blue */
-    --accent-glow: rgba(88, 166, 255, 0.5);
-    --card-bg: #161B22; /* GitHub Dark Card Background */
-    --border-color: #30363D;
-    --hover-bg: #21262D;
-    --header-gradient: linear-gradient(90deg, #161B22, #0D1117);
+    --bg-color: #0A0C10; /* Deep, desaturated navy blue */
+    --text-color: #A7B0C1; /* Cool, light grey */
+    --accent-cyan: #00E5FF; /* Electric cyan */
+    --accent-magenta: #F000FF; /* Bright magenta */
+    --cyan-glow: rgba(0, 229, 255, 0.4);
+    --magenta-glow: rgba(240, 0, 255, 0.4);
+    --card-bg: #11151C;
+    --border-color: #2A303B;
+    --hover-bg: #1A1F29;
+    --header-gradient: linear-gradient(90deg, var(--card-bg), var(--bg-color));
 
     --font-primary: 'Space Grotesk', sans-serif;
-    --font-mono: 'Roboto Mono', monospace;
 }
 
 body {
@@ -26,10 +27,10 @@ body {
 }
 
 h1, h2, h3 {
-    color: var(--accent-color);
+    color: var(--accent-cyan);
     margin-top: 1.5em;
     margin-bottom: 0.5em;
-    text-shadow: 0 0 5px var(--accent-glow);
+    text-shadow: 0 0 8px var(--cyan-glow);
 }
 
 p {
@@ -37,14 +38,14 @@ p {
 }
 
 a {
-    color: var(--accent-color);
+    color: var(--accent-cyan);
     text-decoration: none;
     transition: color 0.3s, text-shadow 0.3s;
 }
 
 a:hover {
     color: #82baff;
-    text-shadow: 0 0 8px var(--accent-glow);
+    text-shadow: 0 0 10px var(--cyan-glow);
     text-decoration: none;
 }
 
@@ -54,11 +55,12 @@ ul {
 }
 
 code {
-    font-family: var(--font-mono);
+    font-family: monospace;
     background-color: var(--hover-bg);
-    color: #9ECBFF;
+    color: var(--accent-magenta);
     padding: 0.2em 0.4em;
     border-radius: 4px;
+    text-shadow: 0 0 5px var(--magenta-glow);
 }
 
 /* --- Navigation --- */
@@ -81,7 +83,6 @@ nav {
     font-size: 1.5em;
     font-weight: 700;
     color: var(--text-color);
-    font-family: var(--font-primary);
 }
 
 .nav-links {
@@ -98,17 +99,18 @@ nav {
 .nav-links a {
     color: var(--text-color);
     font-weight: 400;
-    transition: color 0.3s;
+    transition: color 0.3s, text-shadow 0.3s;
 }
 
 .nav-links a.active, .nav-links a:hover {
-    color: var(--accent-color);
+    color: var(--accent-cyan);
+    text-shadow: 0 0 8px var(--cyan-glow);
 }
 
 /* --- Main Content & Containers --- */
 main {
-    background-color: transparent; /* Main content background is same as body */
-    padding: 2rem;
+    background-color: transparent;
+    padding: 0; /* Padding will be on the inner container */
     border-radius: 8px;
     border: none;
 }
@@ -120,20 +122,20 @@ main {
 }
 
 /* --- Sidebar & Two-Column Layout --- */
-.project-container, .logbook-container, .labs-container {
+.home-container, .project-container, .logbook-container, .labs-container, .findings-container {
     display: flex;
     gap: 2rem;
 }
 
 .sidebar {
-    flex: 0 0 240px; /* Sidebar width */
+    flex: 0 0 240px;
     background-color: var(--card-bg);
     padding: 1.5rem;
     border-radius: 8px;
     border: 1px solid var(--border-color);
-    align-self: flex-start; /* Stick to the top */
+    align-self: flex-start;
     position: sticky;
-    top: 5rem; /* Adjust based on header height */
+    top: 6rem; /* Adjust based on header height + margin */
 }
 
 .sidebar h2 {
@@ -151,17 +153,19 @@ main {
     display: block;
     padding: 0.6rem 0.5rem;
     border-bottom: 1px solid transparent;
-    transition: background-color 0.2s, border-left 0.2s;
+    transition: background-color 0.2s, border-left 0.2s, color 0.2s;
     border-left: 3px solid transparent;
+    color: var(--text-color);
 }
 
 .sidebar li a:hover {
     background-color: var(--hover-bg);
-    border-left: 3px solid var(--accent-color);
+    border-left: 3px solid var(--accent-cyan);
+    color: var(--accent-cyan);
 }
 
-.project-container main, .logbook-container main, .labs-container main {
-    flex: 1; /* Main content takes remaining space */
+.home-container main, .project-container main, .logbook-container main, .labs-container main, .findings-container main {
+    flex: 1;
     background-color: var(--card-bg);
     padding: 2rem;
     border-radius: 8px;
@@ -193,11 +197,11 @@ th, td {
 
 thead {
     background-color: var(--hover-bg);
-    color: var(--accent-color);
+    color: var(--accent-cyan);
 }
 
 tbody tr:nth-child(even) {
-    background-color: #1A1F27;
+    background-color: #161B22;
 }
 
 /* --- Footer --- */
@@ -205,6 +209,6 @@ footer {
     text-align: center;
     padding: 2rem;
     margin-top: 2rem;
-    color: #8B949E; /* GitHub Dark subdued text */
+    color: #8B949E;
     font-size: 0.9em;
 }
