@@ -189,6 +189,10 @@ section:last-child {
     border-bottom: none;
 }
 
+section[id] {
+    scroll-margin-top: 4.5rem; /* Offset for fixed header */
+}
+
 /* --- Tables --- */
 table {
     width: 100%;
