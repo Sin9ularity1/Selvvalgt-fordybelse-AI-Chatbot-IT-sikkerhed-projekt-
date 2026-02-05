@@ -1,374 +1,145 @@
 <!DOCTYPE html>
 <html lang="da">
- <head>
-  <meta charset="utf-8"/>
-  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-  <title>
-   Projekt - GenAI misbrug i IT-sikkerhed
-  </title>
-  <link href="style.css" rel="stylesheet"/>
- </head>
- <body>
-  <header>
-   <nav>
-    <div class="logo">
-     Valgfag - Generative AI Misbrug
-    </div>
-    <ul class="nav-links">
-     <li>
-      <a href="index.html">
-       Hjem
-      </a>
-     </li>
-     <li>
-      <a class="active" href="project.html">
-       Projekt
-      </a>
-     </li>
-     <li>
-      <a href="labs.html">
-       Labs
-      </a>
-     </li>
-     <li>
-      <a href="findings.html">
-       Resultater
-      </a>
-     </li>
-     <li>
-      <a href="logbog.html">
-       Logbog
-      </a>
-     </li>
-     <li>
-      <a href="about.html">
-       Om
-      </a>
-     </li>
-    </ul>
-   </nav>
-  </header>
-  <div class="container project-container">
-   <aside class="sidebar project-sidebar">
-    <h2>
-     Projekt Sektioner
-    </h2>
-    <ul>
-     <li>
-      <a href="#om">
-       Velkommen
-      </a>
-     </li>
-     <li>
-      <a href="#fokus">
-       Fokusomr&aring;der
-      </a>
-     </li>
-     <li>
-      <a href="#maal">
-       Projektm&aring;l
-      </a>
-     </li>
-     <li>
-      <a href="#milepaele">
-       Tidsplan
-      </a>
-     </li>
-     <li>
-      <a href="#metode">
-       Metode
-      </a>
-     </li>
-     <li>
-      <a href="#l&aelig;ring">
-       L&aelig;ringsm&aring;l
-      </a>
-     </li>
-    </ul>
-   </aside>
-   <main>
-    <section id="om">
-     <h1>
-      Velkommen
-     </h1>
-     <p>
-      Velkommen til mit skoleprojekt omkring
-      <strong>
-       misbrug af generativ AI i IT-sikkerhed
-      </strong>
-      .
-     </p>
-     <p>
-      Som studerende p&aring; it-sikkerhedsuddannelsen fik jeg mulighed for selv at v&aelig;lge emnet for mit valgfagsprojekt. Jeg valgte at arbejde med misbrug af generativ kunstig intelligens (GenAI), da dette er et hurtigt voksende omr&aring;de inden for cybersikkerhed, som allerede har stor betydning for b&aring;de organisationer og enkeltpersoner.
-
-Mit valg udspringer af en personlig interesse for samspillet mellem AI og sikkerhed, samt et &oslash;nske om at forst&aring;, hvordan moderne AI-systemer kan udnyttes af angribere gennem blandt andet prompt injection, phishing, social engineering og automatiserede angreb. Indtil nu har mit fokus prim&aelig;rt v&aelig;ret p&aring; traditionelle sikkerhedsprincipper, og dette projekt gav mulighed for at udvide min forst&aring;else til ogs&aring; at omfatte AI-relaterede trusler.
-
-Form&aring;let med projektet er at unders&oslash;ge konkrete misbrugsscenarier for generativ AI gennem praktiske eksperimenter, samt at analysere mulige modforanstaltninger. Projektet kombinerer litteraturstudie med hands-on afpr&oslash;vning af udvalgte angrebsteknikker og defensive strategier.
-
-I rapporten vil jeg beskrive den l&aelig;ringsproces, jeg har anvendt, herunder hvilke metoder og aktiviteter der har bidraget mest til mit udbytte. Med udgangspunkt i fagets l&aelig;ringsm&aring;l vil jeg desuden reflektere over mine resultater og vurdere projektets faglige relevans.
-
-Den praktiske dokumentation, herunder eksperimenter, logbog og tekniske eksempler, er samlet p&aring; projektets hjemmeside, mens rapporten prim&aelig;rt fokuserer p&aring; proces, refleksion og l&aelig;ringsudbytte.
-     </p>
-    </section>
-    <section id="fokus">
-     <h2>
-      Fokusomr&aring;der og teknologier
-     </h2>
-     <ul>
-      <li>
-       Analyse af AI-genereret phishing
-      </li>
-      <li>
-       Social engineering ved brug af AI
-      </li>
-      <li>
-       AI-assisteret malware
-      </li>
-      <li>
-       Prompt injection og manipulation
-      </li>
-      <li>
-       Deepfakes og identitetsmisbrug
-      </li>
-      <li>
-       Automatiseret reconnaissance
-      </li>
-      <li>
-       Python og eventuel lokal AI-model til demonstration
-      </li>
-     </ul>
-    </section>
-    <section id="maal">
-     <h2>
-      Projektm&aring;l
-     </h2>
-     <ul>
-      <li>
-       Unders&oslash;ge hvordan generativ AI kan anvendes i cyberangreb
-      </li>
-      <li>
-       Identificere centrale trusselsvektorer relateret til AI
-      </li>
-      <li>
-       Analysere konkrete eksempler p&aring; AI-baseret misbrug
-      </li>
-      <li>
-       Udvikle en simpel lokal AI-model som demonstrationsv&aelig;rkt&oslash;j (valgfrit)
-      </li>
-      <li>
-       Gennemf&oslash;re en dybdeg&aring;ende analyse af &eacute;n angrebstype
-      </li>
-      <li>
-       Diskutere defensive strategier og modforanstaltninger
-      </li>
-     </ul>
-    </section>
-    <section id="milepaele">
-     <h2>
-      Milep&aelig;le og Tidsplan
-     </h2>
-     <table>
-      <thead>
-       <tr>
-        <th>
-         Uge
-        </th>
-        <th>
-         Aktivitet
-        </th>
-        <th>
-         Output
-        </th>
-       </tr>
-      </thead>
-      <tbody>
-       <tr>
-        <td>
-         1&ndash;2
-        </td>
-        <td>
-         Research: typer af AI-misbrug
-        </td>
-        <td>
-         Oversigt over trusler
-        </td>
-       </tr>
-       <tr>
-        <td>
-         3&ndash;4
-        </td>
-        <td>
-         Indsamling og analyse af eksempler
-        </td>
-        <td>
-         Dokumentation af cases
-        </td>
-       </tr>
-       <tr>
-        <td>
-         5&ndash;6
-        </td>
-        <td>
-         Valg af dybdeg&aring;ende angreb
-        </td>
-        <td>
-         Problemformulering og plan
-        </td>
-       </tr>
-       <tr>
-        <td>
-         7&ndash;9
-        </td>
-        <td>
-         Teknisk analyse af valgt angrebstype
-        </td>
-        <td>
-         Rapport, diagrammer, skitser
-        </td>
-       </tr>
-       <tr>
-        <td>
-         10&ndash;11
-        </td>
-        <td>
-         Valgfrit: Demonstration via lokal AI-model
-        </td>
-        <td>
-         Enkel AI-model
-        </td>
-       </tr>
-       <tr>
-        <td>
-         12
-        </td>
-        <td>
-         Konklusion og defensive strategier
-        </td>
-        <td>
-         Endelig rapport og pr&aelig;sentation
-        </td>
-       </tr>
-      </tbody>
-     </table>
-    </section>
-    <section id="metode">
-     <h2>
-      Metode
-     </h2>
-     <p>
-      Projektet gennemf&oslash;res som en kombination af analyse og praktisk demonstration. Fokus er p&aring; at forst&aring; trusler, analysere eksempler og diskutere modforanstaltninger.
-     </p>
-     <ul>
-      <li>
-       Kortl&aelig;gning af AI-misbrugsmetoder
-      </li>
-      <li>
-       Teknisk analyse af &eacute;n valgt angrebstype
-      </li>
-      <li>
-       Demonstration via lokal AI-model (valgfrit)
-      </li>
-      <li>
-       L&oslash;bende dokumentation og refleksion
-      </li>
-     </ul>
-     <h3>
-      Begr&aelig;nsninger
-     </h3>
-     <p>
-      Projektet er begr&aelig;nset af tid, ressourcer og adgang til data. Fokus er p&aring; analyse og forst&aring;else frem for udvikling af avancerede AI-systemer.
-     </p>
-     <h3>
-      Ekstra m&aring;l (valgfrit)
-     </h3>
-     <ul>
-      <li>
-       Simulere forskellige angrebsscenarier
-      </li>
-      <li>
-       Evaluere defensive strategier
-      </li>
-      <li>
-       Skabe visualiseringer af AI-misbrug
-      </li>
-      <li>
-       Reflektere over etiske aspekter
-      </li>
-     </ul>
-    </section>
-    <section id="l&aelig;ring">
-     <h2>
-      Overordnedel&aelig;ringsm&aring;l
-     </h2>
-     <ul>
-      <li>
-       Forst&aring; hvordan generativ AI kan misbruges i cyberangreb
-      </li>
-      <li>
-       Analysere sikkerhedsrisici ved AI-systemer
-      </li>
-      <li>
-       Identificere angrebsmetoder relateret til generativ AI
-      </li>
-      <li>
-       Gennemf&oslash;re teknisk analyse af &eacute;n angrebstype
-      </li>
-      <li>
-       Reflektere over defensive strategier
-      </li>
-      <li>
-       Dokumentere et IT-sikkerhedsprojekt struktureret
-      </li>
-     </ul>
-     <h2>
-      Viden, F&aelig;rdigheder og Kompetencer
-     </h2>
-     <h3>
-      Viden:
-     </h3>
-     <ul>
-      <li>
-       Sikkerhedsrisici ved AI
-      </li>
-      <li>
-       Typer af angreb og misbrug
-      </li>
-      <li>
-       Defensive strategier
-      </li>
-     </ul>
-     <h3>
-      F&aelig;rdigheder:
-     </h3>
-     <ul>
-      <li>
-       Analytisk vurdering af trusler
-      </li>
-      <li>
-       Teknisk demonstration af AI (valgfrit)
-      </li>
-      <li>
-       Rapportering og dokumentation
-      </li>
-     </ul>
-     <h3>
-      Kompetencer:
-     </h3>
-     <ul>
-      <li>
-       Kritisk refleksion over AI i IT-sikkerhed
-      </li>
-      <li>
-       Planl&aelig;gning og gennemf&oslash;relse af et sikkerhedsprojekt
-      </li>
-      <li>
-       Kommunikere tekniske sikkerhedsaspekter til andre
-      </li>
-     </ul>
-    </section>
-   </main>
-  </div>
-  <footer>
-  </footer>
- </body>
-</html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Projekt - GenAI misbrug i IT-sikkerhed</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+<nav>
+<div class="logo">Valgfag - Generative AI Misbrug</div>
+<ul class="nav-links">
+<li><a href="index.html">Hjem</a></li>
+<li><a href="project.html" class="active">Projekt</a></li>
+<li><a href="labs.html">Labs</a></li>
+<li><a href="findings.html">Resultater</a></li>
+<li><a href="logbog.html">Logbog</a></li>
+<li><a href="about.html">Om</a></li>
+</ul>
+</nav>
+</header>
+<div class="container project-container">
+<aside class="sidebar project-sidebar">
+<h2>Projekt Sektioner</h2>
+<ul>
+<li><a href="#om">Velkommen</a></li>
+<li><a href="#fokus">Fokusområder</a></li>
+<li><a href="#maal">Projektmål</a></li>
+<li><a href="#milepaele">Tidsplan</a></li>
+<li><a href="#metode">Metode</a></li>
+<li><a href="#læring">Læringsmål</a></li>
+</ul>
+</aside>
+<main>
+<section id="om">
+<h1>Velkommen</h1>
+<p>Velkommen til mit skoleprojekt omkring <strong>misbrug af generativ AI i IT-sikkerhed</strong>.</p>
+<p>Projektet undersøger, hvordan AI kan anvendes i cyberangreb som phishing, social engineering, malware-generering og prompt manipulation, og analyserer én valgt angrebstype dybdegående.</p>
+<p>
+Som studerende på it-sikkerhedsuddannelsen fik jeg mulighed for selv at vælge emnet for mit valgfagsprojekt. Jeg valgte at arbejde med misbrug af generativ kunstig intelligens (GenAI), da dette er et hurtigt voksende område inden for cybersikkerhed, som allerede har stor betydning for både organisationer og enkeltpersoner.
+</p>
+<p>
+Mit valg udspringer af en personlig interesse for samspillet mellem AI og sikkerhed, samt et ønske om at forstå, hvordan moderne AI-systemer kan udnyttes af angribere gennem blandt andet prompt injection, phishing, social engineering og automatiserede angreb. Indtil nu har mit fokus primært været på traditionelle sikkerhedsprincipper, og dette projekt gav mulighed for at udvide min forståelse til også at omfatte AI-relaterede trusler.
+</p>
+<p>
+Formålet med projektet er at undersøge konkrete misbrugsscenarier for generativ AI gennem praktiske eksperimenter, samt at analysere mulige modforanstaltninger. Projektet kombinerer litteraturstudie med hands-on afprøvning af udvalgte angrebsteknikker og defensive strategier.
+</p>
+<p>
+I rapporten vil jeg beskrive den læringsproces, jeg har anvendt, herunder hvilke metoder og aktiviteter der har bidraget mest til mit udbytte. Med udgangspunkt i fagets læringsmål vil jeg desuden reflektere over mine resultater og vurdere projektets faglige relevans.
+</p>
+<p>
+Den praktiske dokumentation, herunder eksperimenter, logbog og tekniske eksempler, er samlet på projektets hjemmeside, mens rapporten primært fokuserer på proces, refleksion og læringsudbytte.
+</p>
+</section>
+<section id="fokus">
+<h2>Fokusområder og teknologier</h2>
+<ul>
+<li>Analyse af AI-genereret phishing</li>
+<li>Social engineering ved brug af AI</li>
+<li>AI-assisteret malware</li>
+<li>Prompt injection og manipulation</li>
+<li>Deepfakes og identitetsmisbrug</li>
+<li>Automatiseret reconnaissance</li>
+<li>Python og eventuel lokal AI-model til demonstration</li>
+</ul>
+</section>
+<section id="maal">
+<h2>Projektmål</h2>
+<ul>
+<li>Undersøge hvordan generativ AI kan anvendes i cyberangreb</li>
+<li>Identificere centrale trusselsvektorer relateret til AI</li>
+<li>Analysere konkrete eksempler på AI-baseret misbrug</li>
+<li>Udvikle en simpel lokal AI-model som demonstrationsværktøj (valgfrit)</li>
+<li>Gennemføre en dybdegående analyse af én angrebstype</li>
+<li>Diskutere defensive strategier og modforanstaltninger</li>
+</ul>
+</section>
+<section id="milepaele">
+<h2>Milepæle og Tidsplan</h2>
+<table>
+<thead>
+<tr>
+<th>Uge</th>
+<th>Aktivitet</th>
+<th>Output</th>
+</tr>
+</thead>
+<tbody>
+<tr><td>1–2</td><td>Research: typer af AI-misbrug</td><td>Oversigt over trusler</td></tr>
+<tr><td>3–4</td><td>Indsamling og analyse af eksempler</td><td>Dokumentation af cases</td></tr>
+<tr><td>5–6</td><td>Valg af dybdegående angreb</td><td>Problemformulering og plan</td></tr>
+<tr><td>7–9</td><td>Teknisk analyse af valgt angrebstype</td><td>Rapport, diagrammer, skitser</td></tr>
+<tr><td>10–11</td><td>Valgfrit: Demonstration via lokal AI-model</td><td>Enkel AI-model</td></tr>
+<tr><td>12</td><td>Konklusion og defensive strategier</td><td>Endelig rapport og præsentation</td></tr>
+</tbody>
+</table>
+</section>
+<section id="metode">
+<h2>Metode</h2>
+<p>Projektet gennemføres som en kombination af analyse og praktisk demonstration. Fokus er på at forstå trusler, analysere eksempler og diskutere modforanstaltninger.</p>
+<ul>
+<li>Kortlægning af AI-misbrugsmetoder</li>
+<li>Teknisk analyse af én valgt angrebstype</li>
+<li>Demonstration via lokal AI-model (valgfrit)</li>
+<li>Løbende dokumentation og refleksion</li>
+</ul>
+<h3>Begrænsninger</h3>
+<p>Projektet er begrænset af tid, ressourcer og adgang til data. Fokus er på analyse og forståelse frem for udvikling af avancerede AI-systemer.</p>
+<h3>Ekstra mål (valgfrit)</h3>
+<ul>
+<li>Simulere forskellige angrebsscenarier</li>
+<li>Evaluere defensive strategier</li>
+<li>Skabe visualiseringer af AI-misbrug</li>
+<li>Reflektere over etiske aspekter</li>
+</ul>
+</section>
+<section id="læring">
+<h2>Overordnedelæringsmål</h2>
+<ul>
+<li>Forstå hvordan generativ AI kan misbruges i cyberangreb</li>
+<li>Analysere sikkerhedsrisici ved AI-systemer</li>
+<li>Identificere angrebsmetoder relateret til generativ AI</li>
+<li>Gennemføre teknisk analyse af én angrebstype</li>
+<li>Reflektere over defensive strategier</li>
+<li>Dokumentere et IT-sikkerhedsprojekt struktureret</li>
+</ul>
+<h2>Viden, Færdigheder og Kompetencer</h2>
+<h3>Viden:</h3>
+<ul>
+<li>Sikkerhedsrisici ved AI</li>
+<li>Typer af angreb og misbrug</li>
+<li>Defensive strategier</li>
+</ul>
+<h3>Færdigheder:</h3>
+<ul>
+<li>Analytisk vurdering af trusler</li>
+<li>Teknisk demonstration af AI (valgfrit)</li>
+<li>Rapportering og dokumentation</li>
+</ul>
+<h3>Kompetencer:</h3>
+<ul>
+<li>Kritisk refleksion over AI i IT-sikkerhed</li>
+<li>Planlægning og gennemførelse af et sikkerhedsprojekt</li>
+<li>Kommunikere tekniske sikkerhedsaspekter til an
