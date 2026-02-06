@@ -88,16 +88,22 @@ Projektet er begrænset af tid, ressourcer og adgang til data. Fokus er på **an
 ## 7. Viden, Færdigheder og Kompetencer
 
 **Viden:**  
-- Sikkerhedsrisici ved AI  
-- Typer af angreb og misbrug  
-- Defensive strategier  
+- Trusselsbilledet omkring generativ AI og Large Language Models
+- Centrale angrebsteknikker såsom prompt injection, AI-understøttet phishing og social engineering
+- OWASP Top 10 for LLMs og relaterede sikkerhedsrammeværk
+- Typiske sårbarheder i GenAI-baserede systemer
+- Grundlæggende tekniske modforanstaltninger mod AI-relaterede angreb
 
 **Færdigheder:**  
-- Analytisk vurdering af trusler  
-- Teknisk demonstration af AI (valgfrit)  
-- Rapportering og dokumentation  
+- Analysere og dokumentere GenAI-baserede angrebsscenarier
+- Identificere sikkerhedssårbarheder gennem litteraturstudie og illustrative eksempler
+- Strukturere teknisk dokumentation på webplatform
+- Formidle komplekse sikkerhedsproblemstillinger klart og systematisk
+- Anvende eksisterende sikkerhedsframeworks til praktisk risikovurdering
 
 **Kompetencer:**  
-- Kritisk refleksion over AI i IT-sikkerhed  
-- Planlægning og gennemførelse af et sikkerhedsprojekt  
-- Kommunikere tekniske sikkerhedsaspekter til andre  
+- Kritisk vurdering af generativ AI i et cybersikkerhedsperspektiv
+- Planlægning og gennemførelse af et selvstændigt sikkerhedsprojekt
+- Reflektere over defensive strategier og risikoreduktion
+- Omsætte teoretisk viden til praktisk sikkerhedsanalyse
+- Kommunikere tekniske sikkerhedsaspekter til både tekniske og ikke-tekniske målgrupper
