@@ -24,13 +24,17 @@ body {
     background-color: var(--bg-color);
     color: var(--text-color);
     line-height: 1.7;
+    background-image: 
+        linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+    background-size: 30px 30px;
 }
 
 h1, h2, h3 {
     color: var(--accent-cyan);
     margin-top: 1.5em;
     margin-bottom: 0.5em;
-    text-shadow: 0 0 4px var(--cyan-glow);
+    text-shadow: 0 0 8px var(--cyan-glow), 0 0 12px var(--cyan-glow);
 }
 
 p {
@@ -65,7 +69,8 @@ code {
 
 /* --- Navigation --- */
 header {
-    background: var(--header-gradient);
+    background-color: rgba(17, 21, 28, 0.8);
+    backdrop-filter: blur(10px);
     padding: 1rem 2rem;
     border-bottom: 1px solid var(--border-color);
     position: sticky;
@@ -158,10 +163,20 @@ main {
     color: var(--text-color);
 }
 
-.sidebar li a:hover {
+.sidebar li a:hover, .sidebar li a.active {
     background-color: var(--hover-bg);
     border-left: 3px solid var(--accent-cyan);
     color: var(--accent-cyan);
+    text-shadow: 0 0 10px var(--cyan-glow), 0 0 15px var(--cyan-glow);
+}
+
+.sidebar, .home-container main, .project-container main, .logbook-container main, .labs-container main, .findings-container main, main.single-column-main {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.sidebar:hover, .home-container main:hover, .project-container main:hover, .logbook-container main:hover, .labs-container main:hover, .findings-container main:hover, main.single-column-main:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 25px rgba(0, 229, 255, 0.15), 0 0 40px rgba(0, 229, 255, 0.1);
 }
 
 .home-container main, .project-container main, .logbook-container main, .labs-container main, .findings-container main {
