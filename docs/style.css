@@ -107,6 +107,27 @@ nav {
     text-shadow: 0 0 8px var(--cyan-glow);
 }
 
+.language-switcher {
+    margin-left: 2rem; /* Align with other nav items */
+}
+
+.language-switcher select {
+    background-color: var(--card-bg);
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    font-family: var(--font-primary);
+    font-size: 1em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.language-switcher select:hover {
+    border-color: var(--accent-cyan);
+    box-shadow: 0 0 8px var(--cyan-glow);
+}
+
 /* --- Main Content & Containers --- */
 main {
     background-color: transparent;
