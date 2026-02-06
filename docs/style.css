@@ -8,8 +8,8 @@
     --accent-cyan: #00E5FF; /* Electric cyan */
     --accent-magenta: #F000FF; /* Bright magenta */
     --cyan-glow: rgba(0, 229, 255, 0.4);
-    --magenta-glow: rgba(240, 0, 255, 0.4);
-    --card-bg: #11151C;
+    --magenta-glow: rgba(240, 0, 255, 0.25);
+    --card-bg: #141922;
     --border-color: #2A303B;
     --hover-bg: #1A1F29;
     --header-gradient: linear-gradient(90deg, var(--card-bg), var(--bg-color));
@@ -30,7 +30,7 @@ h1, h2, h3 {
     color: var(--accent-cyan);
     margin-top: 1.5em;
     margin-bottom: 0.5em;
-    text-shadow: 0 0 8px var(--cyan-glow);
+    text-shadow: 0 0 4px var(--cyan-glow);
 }
 
 p {
@@ -44,7 +44,7 @@ a {
 }
 
 a:hover {
-    color: #82baff;
+    color: #4FDFFF;
     text-shadow: 0 0 10px var(--cyan-glow);
     text-decoration: none;
 }
@@ -215,11 +215,15 @@ tbody tr:nth-child(even) {
     background-color: #161B22;
 }
 
+tbody tr:hover {
+    background-color: #1F262F;
+}
+
 /* --- Footer --- */
 footer {
     text-align: center;
     padding: 2rem;
     margin-top: 2rem;
-    color: #8B949E;
+    color: #A0A8B8;
     font-size: 0.9em;
 }
