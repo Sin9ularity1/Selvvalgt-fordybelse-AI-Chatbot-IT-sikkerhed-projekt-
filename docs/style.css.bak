@@ -3,20 +3,15 @@
 
 /* --- Base & Typography --- */
 :root {
-    /* --bg-color: #0A0C10; Deep, desaturated navy blue (original) */
-    --bg-color: #F8F8F8; /* Light grey for SDU style */
-    /* --text-color: #A7B0C1; Cool, light grey (original) */
-    --text-color: #333333; /* Darker grey for SDU style */
+    --bg-color: #0A0C10; /* Deep, desaturated navy blue */
+    --text-color: #A7B0C1; /* Cool, light grey */
     --accent-cyan: #00E5FF; /* Electric cyan */
     --accent-magenta: #F000FF; /* Bright magenta */
     --cyan-glow: rgba(0, 229, 255, 0.4);
     --magenta-glow: rgba(240, 0, 255, 0.25);
-    /* --card-bg: #141922; (original) */
-    --card-bg: #FFFFFF; /* White for SDU style cards */
-    /* --border-color: #2A303B; (original) */
-    --border-color: #E0E0E0; /* Light grey border for SDU style */
-    /* --hover-bg: #1A1F29; (original) */
-    --hover-bg: #EEEEEE; /* Lighter hover background for SDU style */
+    --card-bg: #141922;
+    --border-color: #2A303B;
+    --hover-bg: #1A1F29;
     --header-gradient: linear-gradient(90deg, var(--card-bg), var(--bg-color));
 
     --font-primary: 'Space Grotesk', sans-serif;
@@ -26,24 +21,16 @@ body {
     font-family: var(--font-primary);
     margin: 0;
     padding: 0;
-    background-color: var(--bg-color); /* SDU style */
-    color: var(--text-color); /* SDU style */
+    background-color: var(--bg-color);
+    color: var(--text-color);
     line-height: 1.7;
-    /* --- Original futuristic background pattern commented out ---
-    background-image: 
-        linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
-    background-size: 30px 30px;
-    */
 }
 
 h1, h2, h3 {
-    /* color: var(--accent-cyan); (original) */
-    color: var(--text-color); /* SDU style: darker headings */
+    color: var(--accent-cyan);
     margin-top: 1.5em;
     margin-bottom: 0.5em;
-    /* text-shadow: 0 0 4px var(--cyan-glow); (original) */
-    /* Removed text-shadow for SDU style */
+    text-shadow: 0 0 4px var(--cyan-glow);
 }
 
 p {
@@ -51,18 +38,15 @@ p {
 }
 
 a {
-    /* color: var(--accent-cyan); (original) */
-    color: #0056b3; /* Standard blue for SDU style */
+    color: var(--accent-cyan);
     text-decoration: none;
     transition: color 0.3s, text-shadow 0.3s;
 }
 
 a:hover {
-    /* color: #4FDFFF; (original) */
-    color: #003366; /* Darker blue on hover for SDU style */
-    text-decoration: underline; /* Standard underline on hover for SDU style */
-    /* text-shadow: 0 0 10px var(--cyan-glow); (original) */
-    /* Removed text-shadow for SDU style */
+    color: #4FDFFF;
+    text-shadow: 0 0 10px var(--cyan-glow);
+    text-decoration: none;
 }
 
 ul {
@@ -72,13 +56,11 @@ ul {
 
 code {
     font-family: monospace;
-    background-color: var(--hover-bg); /* Use lighter hover-bg for SDU style */
-    /* color: var(--accent-magenta); (original) */
-    color: #C7254E; /* Standard code color for SDU style */
+    background-color: var(--hover-bg);
+    color: var(--accent-magenta);
     padding: 0.2em 0.4em;
     border-radius: 4px;
-    /* text-shadow: 0 0 5px var(--magenta-glow); (original) */
-    /* Removed text-shadow for SDU style */
+    text-shadow: 0 0 5px var(--magenta-glow);
 }
 
 /* --- Navigation --- */
@@ -121,11 +103,8 @@ nav {
 }
 
 .nav-links a.active, .nav-links a:hover {
-    /* color: var(--accent-cyan); (original) */
-    color: #0056b3; /* SDU style: primary link color */
-    /* text-shadow: 0 0 8px var(--cyan-glow); (original) */
-    /* Removed text-shadow for SDU style */
-    text-decoration: underline; /* SDU style: underline on hover/active */
+    color: var(--accent-cyan);
+    text-shadow: 0 0 8px var(--cyan-glow);
 }
 
 /* --- Main Content & Containers --- */
@@ -150,14 +129,13 @@ main {
 
 .sidebar {
     flex: 0 0 240px;
-    background-color: var(--card-bg); /* SDU style */
+    background-color: var(--card-bg);
     padding: 1.5rem;
     border-radius: 8px;
-    border: 1px solid var(--border-color); /* SDU style */
+    border: 1px solid var(--border-color);
     align-self: flex-start;
     position: sticky;
     top: 6rem; /* Adjust based on header height + margin */
-    /* Removed box-shadow for SDU style */
 }
 
 .sidebar h2 {
@@ -181,26 +159,25 @@ main {
 }
 
 .sidebar li a:hover, .sidebar li a.active {
-    background-color: var(--hover-bg); /* SDU style */
-    border-left: 3px solid #0056b3; /* SDU style: specific blue for accent */
-    color: var(--text-color); /* SDU style: default text color */
-    /* text-shadow: 0 0 8px var(--cyan-glow); (original) */
-    /* Removed text-shadow for SDU style */
+    background-color: var(--hover-bg);
+    border-left: 3px solid var(--accent-cyan);
+    color: var(--accent-cyan);
+    text-shadow: 0 0 8px var(--cyan-glow);
 }
 
 .home-container main, .project-container main, .logbook-container main, .labs-container main, .findings-container main {
     flex: 1;
-    background-color: var(--card-bg); /* SDU style */
+    background-color: var(--card-bg);
     padding: 2rem;
     border-radius: 8px;
-    border: 1px solid var(--border-color); /* SDU style */
+    border: 1px solid var(--border-color);
 }
 
 main.single-column-main {
-    background-color: var(--card-bg); /* SDU style */
+    background-color: var(--card-bg);
     padding: 2rem;
     border-radius: 8px;
-    border: 1px solid var(--border-color); /* SDU style */
+    border: 1px solid var(--border-color);
 }
 
 section {
@@ -231,18 +208,16 @@ th, td {
 }
 
 thead {
-    background-color: var(--hover-bg); /* SDU style */
-    color: var(--text-color); /* SDU style */
+    background-color: var(--hover-bg);
+    color: var(--accent-cyan);
 }
 
 tbody tr:nth-child(even) {
-    /* background-color: #161B22; (original) */
-    background-color: #F0F0F0; /* Lighter background for SDU style */
+    background-color: #161B22;
 }
 
 tbody tr:hover {
-    /* background-color: #1F262F; (original) */
-    background-color: #E6E6E6; /* Lighter hover background for SDU style */
+    background-color: #1F262F;
 }
 
 /* --- Footer --- */
@@ -250,6 +225,6 @@ footer {
     text-align: center;
     padding: 2rem;
     margin-top: 2rem;
-    color: var(--text-color); /* SDU style */
+    color: #A0A8B8;
     font-size: 0.9em;
 }
