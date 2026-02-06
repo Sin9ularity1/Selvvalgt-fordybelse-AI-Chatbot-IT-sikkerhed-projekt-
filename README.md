@@ -2,6 +2,9 @@
 
 Denne projektplan beskriver, hvordan man undersøger **misbrug af generativ AI** i cyberangreb og sikkerhedsrisici, med mulighed for at demonstrere et konkret eksempel via en lokal AI-model.
 
+## Hjemmesiden
+https://sin9ularity1.github.io/Valgfag-Generative-AI-Misbrug/index.html
+
 ---
 
 ## 1. Projektoversigt
