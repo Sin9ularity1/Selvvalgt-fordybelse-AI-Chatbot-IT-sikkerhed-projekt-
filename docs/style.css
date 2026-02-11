@@ -1,41 +1,43 @@
 /* --- Google Fonts --- */
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap');
 
-/* --- Base & Typography --- */
+/* --- Base Variables --- */
 :root {
-    /* --- Core surfaces --- */
-    --bg-color: #ECEEEF;          /* Cool ceramic off-white */
-    --card-bg: #F7F8F9;           /* Porcelain white */
-    --border-color: #D2D6DA;      /* Soft technical grey */
+    /* Core surfaces */
+    --bg-color: #E6E8EB;            /* Cool system grey */
+    --panel-bg: #EEF0F4;            /* Light UI panel */
+    --card-bg: #F2F3F7;             /* Slight lavender tint */
+    --border-color: #C9CED6;
 
-    /* --- Text --- */
-    --text-color: #3F444A;        /* Graphite grey */
-    --muted-text: #6B7076;
+    /* Text */
+    --text-color: #2F343A;
+    --muted-text: #6B7280;
 
-    /* --- Accents (cyber-organic) --- */
-    --accent-mint: #7FD1C3;       /* Neural mint */
-    --accent-teal: #4FB3B8;       /* Deeper cyber teal */
-    --accent-violet: #9B8EC7;     /* Synthetic lavender */
-    --accent-violet-soft: #C6BFE0;
+    /* Marathon-inspired accents */
+    --mint: #6FE3C1;
+    --mint-soft: #B9F2E3;
+    --teal: #3FB8B3;
+    --violet: #9B8EC7;
+    --violet-soft: #D6D0EA;
 
-    /* --- UI states --- */
-    --hover-bg: #E3E6EA;          /* Cool hover grey */
-    --table-hover: #E9E7F0;       /* Violet-tinted hover */
+    /* UI states */
+    --hover-bg: #E1E4EA;
+    --active-bg: #DADDF0;
 
-    /* --- Header --- */
+    /* Header bar */
     --header-gradient: linear-gradient(
         90deg,
-        #F7F8F9,
-        #ECEEEF
+        var(--mint),
+        var(--violet)
     );
 
     --font-primary: 'Space Grotesk', sans-serif;
 }
 
+/* --- Global --- */
 body {
-    font-family: var(--font-primary);
     margin: 0;
-    padding: 0;
+    font-family: var(--font-primary);
     background-color: var(--bg-color);
     color: var(--text-color);
     line-height: 1.7;
@@ -43,48 +45,38 @@ body {
 
 /* --- Headings --- */
 h1, h2, h3 {
-    color: var(--accent-violet);
-    margin-top: 1.5em;
-    margin-bottom: 0.5em;
+    color: var(--violet);
     font-weight: 600;
-    letter-spacing: 0.02em;
-}
-
-p {
-    margin-bottom: 1em;
+    letter-spacing: 0.03em;
+    margin-top: 1.5em;
+    margin-bottom: 0.6em;
 }
 
 /* --- Links --- */
 a {
-    color: var(--accent-teal);
+    color: var(--teal);
     text-decoration: none;
-    transition: color 0.25s ease;
+    transition: color 0.2s ease;
 }
 
 a:hover {
-    color: var(--accent-mint);
+    color: var(--mint);
     text-decoration: underline;
-}
-
-ul {
-    list-style-position: inside;
-    padding-left: 0;
 }
 
 /* --- Inline code --- */
 code {
-    font-family: monospace;
-    background-color: #E8E6F0;
-    color: #5E5685;
+    background: var(--active-bg);
+    color: #4A3F77;
     padding: 0.2em 0.4em;
     border-radius: 4px;
+    font-family: monospace;
 }
 
-/* --- Navigation --- */
+/* --- Header / Nav --- */
 header {
     background: var(--header-gradient);
     padding: 1rem 2rem;
-    border-bottom: 1px solid var(--border-color);
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -97,49 +89,36 @@ nav {
 }
 
 .logo {
-    font-size: 1.5em;
+    font-size: 1.4em;
     font-weight: 700;
-    color: var(--text-color);
+    color: #1E1E1E;
 }
 
 .nav-links {
     display: flex;
     list-style: none;
-    margin: 0;
-    padding: 0;
-}
-
-.nav-links li {
-    margin-left: 2rem;
+    gap: 2rem;
 }
 
 .nav-links a {
-    color: var(--text-color);
-    font-weight: 400;
-    transition: color 0.25s ease;
+    color: #1E1E1E;
+    font-weight: 500;
+    padding-bottom: 0.2rem;
+    border-bottom: 2px solid transparent;
 }
 
-.nav-links a.active,
-.nav-links a:hover {
-    color: var(--accent-teal);
-    text-decoration: underline;
+.nav-links a:hover,
+.nav-links a.active {
+    border-bottom: 2px solid #1E1E1E;
 }
 
-/* --- Main Content & Containers --- */
-main {
-    background-color: transparent;
-    padding: 0;
-    border-radius: 8px;
-    border: none;
-}
-
+/* --- Layout Containers --- */
 .container {
     max-width: 1200px;
     margin: 2rem auto;
     padding: 0 2rem;
 }
 
-/* --- Sidebar & Two-Column Layout --- */
 .home-container,
 .project-container,
 .logbook-container,
@@ -149,67 +128,62 @@ main {
     gap: 2rem;
 }
 
+/* --- Sidebar --- */
 .sidebar {
     flex: 0 0 240px;
-    background-color: var(--card-bg);
-    padding: 1.5rem;
-    border-radius: 8px;
+    background: linear-gradient(
+        180deg,
+        var(--panel-bg),
+        var(--card-bg)
+    );
     border: 1px solid var(--border-color);
-    align-self: flex-start;
+    border-radius: 10px;
+    padding: 1.5rem;
     position: sticky;
     top: 6rem;
 }
 
 .sidebar h2 {
     margin-top: 0;
-    font-size: 1.2em;
+    font-size: 1.1em;
+    color: var(--teal);
     border-bottom: 1px solid var(--border-color);
     padding-bottom: 0.5rem;
 }
 
 .sidebar ul {
     list-style: none;
+    padding: 0;
 }
 
 .sidebar li a {
     display: block;
-    padding: 0.6rem 0.5rem;
-    border-left: 3px solid transparent;
-    transition: background-color 0.2s ease, border-left 0.2s ease;
+    padding: 0.6rem 0.6rem;
+    margin-bottom: 0.3rem;
+    border-left: 4px solid transparent;
     color: var(--text-color);
+    transition: background 0.2s, border-left 0.2s;
 }
 
 .sidebar li a:hover,
 .sidebar li a.active {
     background-color: var(--hover-bg);
-    border-left: 3px solid var(--accent-teal);
-    color: var(--text-color);
+    border-left: 4px solid var(--mint);
 }
 
-/* --- Main panels --- */
-.home-container main,
-.project-container main,
-.logbook-container main,
-.labs-container main,
-.findings-container main {
+/* --- Main Content Panels --- */
+main {
     flex: 1;
     background-color: var(--card-bg);
     padding: 2rem;
-    border-radius: 8px;
+    border-radius: 10px;
     border: 1px solid var(--border-color);
 }
 
-main.single-column-main {
-    background-color: var(--card-bg);
-    padding: 2rem;
-    border-radius: 8px;
-    border: 1px solid var(--border-color);
-}
-
-/* --- Sections --- */
+/* --- Sections (UI module feel) --- */
 section {
-    padding-bottom: 1rem;
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
     border-bottom: 1px solid var(--border-color);
 }
 
@@ -218,26 +192,26 @@ section:last-child {
 }
 
 section[id] {
-    scroll-margin-top: 4.5rem;
+    scroll-margin-top: 5rem;
 }
 
-/* --- Tables --- */
+/* --- Tables (system readout vibe) --- */
 table {
     width: 100%;
     border-collapse: collapse;
     margin: 1.5rem 0;
+    background-color: var(--panel-bg);
 }
 
-th,
-td {
+th {
+    background-color: var(--violet-soft);
+    color: #2B2B2B;
+    font-weight: 600;
+}
+
+th, td {
     padding: 0.8rem;
-    text-align: left;
     border: 1px solid var(--border-color);
-}
-
-thead {
-    background-color: var(--hover-bg);
-    color: var(--text-color);
 }
 
 tbody tr:nth-child(even) {
@@ -245,14 +219,14 @@ tbody tr:nth-child(even) {
 }
 
 tbody tr:hover {
-    background-color: var(--table-hover);
+    background-color: var(--active-bg);
 }
 
 /* --- Footer --- */
 footer {
-    text-align: center;
+    margin-top: 3rem;
     padding: 2rem;
-    margin-top: 2rem;
+    text-align: center;
     color: var(--muted-text);
-    font-size: 0.9em;
+    font-size: 0.85em;
 }
