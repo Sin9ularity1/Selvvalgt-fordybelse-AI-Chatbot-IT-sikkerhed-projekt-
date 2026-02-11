@@ -36,13 +36,14 @@ body {
     line-height: 1.6;
 }
 
-/* --- Header / Nav --- */
+/* --- Header / Top Nav --- */
 header {
     background-color: var(--ui-purple);
     padding: 1rem 2rem;
     position: sticky;
     top: 0;
     z-index: 1000;
+    border-bottom: 2px solid var(--border-color);
 }
 
 nav {
@@ -56,6 +57,7 @@ nav {
     font-size: 1.3rem;
     color: #000;
     letter-spacing: 0.05em;
+    text-transform: uppercase;
 }
 
 .nav-links {
@@ -81,31 +83,26 @@ nav {
     border-bottom: 3px solid var(--ui-green);
 }
 
-/* --- Layout --- */
+/* --- Layout Container --- */
 .container {
     max-width: 1200px;
     margin: 2rem auto;
+    margin-left: 260px; /* space for fixed sidebar */
     padding: 0 2rem;
 }
 
-.home-container,
-.project-container,
-.logbook-container,
-.labs-container,
-.findings-container {
-    display: flex;
-    gap: 2rem;
-}
-
-/* --- Sidebar --- */
+/* --- Fixed Sidebar (UI Rail) --- */
 .sidebar {
-    flex: 0 0 240px;
+    position: fixed;
+    top: 5.5rem; /* header height */
+    left: 0;
+    width: 240px;
+    height: calc(100vh - 5.5rem);
     background-color: var(--panel-bg);
-    border: 2px solid var(--border-color);
+    border-right: 2px solid var(--border-color);
     padding: 1.5rem;
-    position: sticky;
-    top: 6rem;
-    align-self: flex-start;
+    overflow-y: auto;
+    z-index: 900;
 }
 
 .sidebar h2 {
@@ -115,43 +112,51 @@ nav {
     background-color: var(--ui-green);
     padding: 0.4rem 0.6rem;
     margin: 0 0 1rem 0;
+    letter-spacing: 0.08em;
 }
 
 .sidebar ul {
     list-style: none;
     padding: 0;
+    margin: 0;
 }
 
 .sidebar li a {
     display: block;
-    padding: 0.5rem;
+    padding: 0.5rem 0.6rem;
     margin-bottom: 0.3rem;
     font-family: var(--font-mono);
     color: var(--text-color);
+    text-decoration: none;
     border-left: 6px solid transparent;
 }
 
-.sidebar li a:hover,
-.sidebar li a.active {
-    border-left: 6px solid var(--ui-green);
+.sidebar li a:hover {
     background-color: #EAFBF6;
+    border-left: 6px solid var(--ui-green);
+}
+
+.sidebar li a.active {
+    background-color: var(--ui-green);
+    border-left: 6px solid var(--ui-green-dark);
+    color: #000;
+    font-weight: 600;
 }
 
 /* --- Main Panel --- */
 main {
-    flex: 1;
     background-color: var(--panel-bg);
     border: 2px solid var(--border-color);
     padding: 2rem;
 }
 
-/* --- Headings (Highlighter style) --- */
+/* --- Headings (Highlighter Style) --- */
 h1, h2, h3 {
     font-family: var(--font-mono);
     text-transform: uppercase;
     letter-spacing: 0.08em;
     display: inline-block;
-    padding: 0.1rem 0.6rem;
+    padding: 0.15rem 0.6rem;
     margin-top: 2rem;
     margin-bottom: 1rem;
 }
@@ -184,6 +189,7 @@ code {
     font-family: var(--font-mono);
     background-color: #EDEDED;
     padding: 0.2rem 0.4rem;
+    border: 1px solid var(--border-color);
 }
 
 /* --- Sections --- */
@@ -204,6 +210,7 @@ table {
 th {
     background-color: var(--ui-purple);
     text-align: left;
+    color: #000;
 }
 
 th, td {
