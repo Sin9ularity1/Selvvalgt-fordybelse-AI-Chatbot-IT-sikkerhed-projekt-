@@ -105,6 +105,7 @@ nav {
     padding: 1.5rem;
     position: sticky;
     top: 6rem;
+    align-self: flex-start;
 }
 
 .sidebar h2 {
