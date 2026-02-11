@@ -4,7 +4,7 @@
 /* --- Variables --- */
 :root {
     /* Core */
-    --bg-color: #F5F6F3;          /* Medical white */
+    --bg-color: #F0F1EE;          /* Softer medical white */
     --panel-bg: #FFFFFF;
     --border-color: #1E1E1E;
 
@@ -88,7 +88,7 @@ nav {
     max-width: 1200px;
     margin: 2rem auto;
     margin-left: 260px; /* space for fixed sidebar */
-    padding: 0 2rem;
+    padding: 0 2rem 3rem;
 }
 
 /* --- Fixed Sidebar (UI Rail) --- */
@@ -143,11 +143,10 @@ nav {
     font-weight: 600;
 }
 
-/* --- Main Panel --- */
+/* --- Main Content --- */
 main {
     background-color: var(--panel-bg);
-    border: 2px solid var(--border-color);
-    padding: 2rem;
+    padding: 2.5rem;
 }
 
 /* --- Headings (Highlighter Style) --- */
