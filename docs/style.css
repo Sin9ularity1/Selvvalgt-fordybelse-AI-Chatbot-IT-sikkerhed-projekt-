@@ -1,81 +1,44 @@
-/* --- Google Fonts --- */
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap');
+/* --- Fonts --- */
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap');
 
-/* --- Base Variables --- */
+/* --- Variables --- */
 :root {
-    /* Core surfaces */
-    --bg-color: #FFFFFF;            /* Medical white */
-    --panel-bg: #F5F5F5;            /* Light panel background */
-    --card-bg: #EFEFEF;             /* Slightly darker card background */
-    --border-color: #CCCCCC;
+    /* Core */
+    --bg-color: #F5F6F3;          /* Medical white */
+    --panel-bg: #FFFFFF;
+    --border-color: #1E1E1E;
 
     /* Text */
-    --text-color: #1A1A1A;
-    --muted-text: #666666;
+    --text-color: #1E1E1E;
+    --muted-text: #555555;
 
-    /* AI-themed accents (Green & Purple) */
-    --primary-green: #00FF00;      /* Bright neon green */
-    --secondary-green: #00CC00;    /* Slightly darker green */
-    --primary-purple: #8A2BE2;     /* Blue Violet */
-    --secondary-purple: #C8A2C8;   /* Light purple */
+    /* Marathon colours */
+    --ui-purple: #9B8EC7;
+    --ui-purple-dark: #7E72AE;
+    --ui-green: #6FE3C1;
+    --ui-green-dark: #45C9A6;
 
-    /* UI states */
-    --hover-bg: #E0FFE0;           /* Light green hover */
-    --active-bg: #EFE0FF;          /* Light purple active */
+    /* Accents */
+    --highlight-green: #6FE3C1;
+    --highlight-purple: #C7BDF0;
 
-    /* Header bar */
-    --header-gradient: linear-gradient(
-        90deg,
-        var(--primary-green),
-        var(--primary-purple)
-    );
-
-    --font-primary: 'Space Grotesk', sans-serif;
+    /* Fonts */
+    --font-main: 'Space Grotesk', sans-serif;
+    --font-mono: 'IBM Plex Mono', monospace;
 }
 
 /* --- Global --- */
 body {
     margin: 0;
-    font-family: var(--font-primary);
     background-color: var(--bg-color);
     color: var(--text-color);
-    line-height: 1.7;
-}
-
-/* --- Headings --- */
-h1, h2, h3 {
-    color: var(--primary-purple);
-    font-weight: 600;
-    letter-spacing: 0.03em;
-    margin-top: 1.5em;
-    margin-bottom: 0.6em;
-    text-decoration: underline;
-}
-
-/* --- Links --- */
-a {
-    color: var(--primary-green);
-    text-decoration: none;
-    transition: color 0.2s ease;
-}
-
-a:hover {
-    color: var(--secondary-green);
-    text-decoration: underline;
-}
-
-/* --- Inline code --- */
-code {
-    background: var(--active-bg);
-    color: #4A3F77;
-    padding: 0.2em 0.4em;
-    border-radius: 4px;
-    font-family: monospace;
+    font-family: var(--font-main);
+    line-height: 1.6;
 }
 
 /* --- Header / Nav --- */
 header {
-    background: var(--header-gradient);
+    background-color: var(--ui-purple);
     padding: 1rem 2rem;
     position: sticky;
     top: 0;
@@ -89,30 +52,35 @@ nav {
 }
 
 .logo {
-    font-size: 1.4em;
     font-weight: 700;
-    color: #1E1E1E;
+    font-size: 1.3rem;
+    color: #000;
+    letter-spacing: 0.05em;
 }
 
 .nav-links {
-    display: flex;
     list-style: none;
+    display: flex;
     gap: 2rem;
+    margin: 0;
+    padding: 0;
 }
 
 .nav-links a {
-    color: #1E1E1E;
-    font-weight: 500;
-    padding-bottom: 0.2rem;
-    border-bottom: 2px solid transparent;
+    color: #000;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: 0.2rem 0;
+    border-bottom: 3px solid transparent;
 }
 
 .nav-links a:hover,
 .nav-links a.active {
-    border-bottom: 2px solid #1E1E1E;
+    border-bottom: 3px solid var(--ui-green);
 }
 
-/* --- Layout Containers --- */
+/* --- Layout --- */
 .container {
     max-width: 1200px;
     margin: 2rem auto;
@@ -131,24 +99,20 @@ nav {
 /* --- Sidebar --- */
 .sidebar {
     flex: 0 0 240px;
-    background: linear-gradient(
-        180deg,
-        var(--panel-bg),
-        var(--card-bg)
-    );
-    border: 1px solid var(--border-color);
-    border-radius: 10px;
+    background-color: var(--panel-bg);
+    border: 2px solid var(--border-color);
     padding: 1.5rem;
     position: sticky;
     top: 6rem;
 }
 
 .sidebar h2 {
-    margin-top: 0;
-    font-size: 1.1em;
-    color: var(--primary-green);
-    border-bottom: 1px solid var(--border-color);
-    padding-bottom: 0.5rem;
+    font-family: var(--font-mono);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    background-color: var(--ui-green);
+    padding: 0.4rem 0.6rem;
+    margin: 0 0 1rem 0;
 }
 
 .sidebar ul {
@@ -158,68 +122,94 @@ nav {
 
 .sidebar li a {
     display: block;
-    padding: 0.6rem 0.6rem;
+    padding: 0.5rem;
     margin-bottom: 0.3rem;
-    border-left: 4px solid transparent;
+    font-family: var(--font-mono);
     color: var(--text-color);
-    transition: background 0.2s, border-left 0.2s;
+    border-left: 6px solid transparent;
 }
 
 .sidebar li a:hover,
 .sidebar li a.active {
-    background-color: var(--hover-bg);
-    border-left: 4px solid var(--primary-green);
+    border-left: 6px solid var(--ui-green);
+    background-color: #EAFBF6;
 }
 
-/* --- Main Content Panels --- */
+/* --- Main Panel --- */
 main {
     flex: 1;
-    background-color: var(--card-bg);
+    background-color: var(--panel-bg);
+    border: 2px solid var(--border-color);
     padding: 2rem;
-    border-radius: 10px;
-    border: 1px solid var(--border-color);
 }
 
-/* --- Sections (UI module feel) --- */
+/* --- Headings (Highlighter style) --- */
+h1, h2, h3 {
+    font-family: var(--font-mono);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    display: inline-block;
+    padding: 0.3rem 0.6rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+h1 {
+    background-color: var(--highlight-purple);
+}
+
+h2 {
+    background-color: var(--highlight-green);
+}
+
+h3 {
+    background-color: #DDD;
+}
+
+/* --- Paragraphs --- */
+p {
+    margin-bottom: 1rem;
+}
+
+/* --- Links --- */
+a {
+    color: #006B5F;
+    text-decoration: underline;
+}
+
+/* --- Code --- */
+code {
+    font-family: var(--font-mono);
+    background-color: #EDEDED;
+    padding: 0.2rem 0.4rem;
+}
+
+/* --- Sections --- */
 section {
-    margin-bottom: 2rem;
-    padding-bottom: 1.5rem;
-    border-bottom: 1px solid var(--border-color);
+    margin-bottom: 2.5rem;
 }
 
-section:last-child {
-    border-bottom: none;
-}
-
-section[id] {
-    scroll-margin-top: 5rem;
-}
-
-/* --- Tables (system readout vibe) --- */
+/* --- Tables --- */
 table {
     width: 100%;
     border-collapse: collapse;
     margin: 1.5rem 0;
-    background-color: var(--panel-bg);
+    font-family: var(--font-mono);
+    font-size: 0.9rem;
 }
 
 th {
-    background-color: var(--secondary-purple);
-    color: #2B2B2B;
-    font-weight: 600;
+    background-color: var(--ui-purple);
+    text-align: left;
 }
 
 th, td {
-    padding: 0.8rem;
-    border: 1px solid var(--border-color);
+    border: 2px solid var(--border-color);
+    padding: 0.6rem;
 }
 
 tbody tr:nth-child(even) {
-    background-color: var(--hover-bg);
-}
-
-tbody tr:hover {
-    background-color: var(--active-bg);
+    background-color: #F0F0F0;
 }
 
 /* --- Footer --- */
@@ -227,6 +217,7 @@ footer {
     margin-top: 3rem;
     padding: 2rem;
     text-align: center;
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
     color: var(--muted-text);
-    font-size: 0.85em;
 }
