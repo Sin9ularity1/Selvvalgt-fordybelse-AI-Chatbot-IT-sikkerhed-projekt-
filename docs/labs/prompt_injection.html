@@ -35,19 +35,32 @@
                     <br>
                     <h2>What is Prompt Injection</h2>
                     <p>Prompt Injection is the act of giving an LLM a malicious payload, either as an act of malice or accidentally, that alters the way the LLM behaves.</p>
-                    <p>Prompt Injection could cause LLM's to violate guidelines, generate harmful content, enable unauthorized access or influence critical decisions.</p>
+                    <p>Prompt Injection could cause LLM's to violate guidelines, disclose sensitive information, generate harmful content, enable unauthorized access or influence critical decisions.</p>
                     
                     <h2>Types of Prompt Injection Vulnerabilities</h2>
-                    <h3>Direct Prompt Injections</h3>
-                    <p>bla</p>
-
-                    <h3>Indirect Prompt Injections</h3>
-                    <p>bla</p>
-
+                    <dl>
+                        <dt>Direct Prompt Injections</dt>
+                        <dd>Models behaviour is altered by the users direct set of inputs</dd>
+                        <dt>Indirect Prompt Injections</dt>
+                        <dd>The LLM accepts input from external sources like websites or files that alter the models behaviour.</dd>
+                    </dl>
+                    
                     <h2>Prevention and Mitigation</h2>
                     <dl>
                         <dt>1. Constrain model behaviour</dt>
                         <dd>description</dd>
+                        <dt>2. Define and validate expected output formats</dt>
+                        <dd>..</dd>
+                        <dt>3. Implement input and output filtering</dt>
+                        <dd>..</dd>
+                        <dt>4. Enforce privilege control and least privilege access</dt>
+                        <dd>..</dd>
+                        <dt>5. Require human approval for high-risk actions</dt>
+                        <dd>..</dd>
+                        <dt>6. Segregate and identify external content</dt>
+                        <dd>..</dd>
+                        <dt>7. Conduct adversarial testing and attack simulations</dt>
+                        <dd>..</dd>
                     </dl>
 
                     <h2>Example Attacks</h2>
