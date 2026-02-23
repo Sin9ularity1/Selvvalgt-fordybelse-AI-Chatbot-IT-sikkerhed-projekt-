@@ -117,54 +117,50 @@
                         According to OWASP guidance, prompt injection cannot be fully eliminated, but risk can be reduced.
                     </p>
 
-                    <article>
-                        <h3>3.1 Constrain model behaviour</h3>
-                        <p>
-                            Use strong system prompts that clearly define boundaries. However, system prompts alone are not sufficient.
-                        </p>
-                    </article>
-
-                    <article>
-                        <h3>3.2 Define and validate expected output formats</h3>
-                        <p>
-                            Require structured outputs (e.g., JSON schemas) and validate them before execution.
-                        </p>
-                    </article>
-
-                    <article>
-                        <h3>3.3 Implement input and output filtering</h3>
-                        <p>
-                            Filter user input for suspicious patterns such as instruction override attempts. Also filter outputs before allowing them to trigger actions.
-                        </p>
-                    </article>
-
-                    <article>
-                        <h3>3.4 Enforce privilege control and least privilege access</h3>
-                        <p>
-                            If the model has tool access (files, APIs, databases), limit permissions strictly. The model should never have more access than necessary.
-                        </p>
-                    </article>
-
-                    <article>
-                        <h3>3.5 Require human approval for high-risk actions</h3>
-                        <p>
-                            Require manual approval for high-risk actions such as sending emails, deleting files, or executing code.
-                        </p>
-                    </article>
-
-                    <article>
-                        <h3>3.6 Segregate and identify external content</h3>
-                        <p>
-                            Treat external content as untrusted. Clearly separate it from system instructions.
-                        </p>
-                    </article>
-
-                    <article>
-                        <h3>3.7 Conduct adversarial testing and attack simulations</h3>
-                        <p>
-                            Regularly test the system with known injection attempts to measure resilience.
-                        </p>
-                    </article>
+                    <ul>
+                        <li>
+                            <strong>3.1 Constrain model behaviour:</strong>
+                            <ul>
+                                <li>Use strong system prompts that clearly define boundaries. However, system prompts alone are not sufficient.</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong>3.2 Define and validate expected output formats:</strong>
+                            <ul>
+                                <li>Require structured outputs (e.g., JSON schemas) and validate them before execution.</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong>3.3 Implement input and output filtering:</strong>
+                            <ul>
+                                <li>Filter user input for suspicious patterns such as instruction override attempts. Also filter outputs before allowing them to trigger actions.</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong>3.4 Enforce privilege control and least privilege access:</strong>
+                            <ul>
+                                <li>If the model has tool access (files, APIs, databases), limit permissions strictly. The model should never have more access than necessary.</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong>3.5 Require human approval for high-risk actions:</strong>
+                            <ul>
+                                <li>Require manual approval for high-risk actions such as sending emails, deleting files, or executing code.</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong>3.6 Segregate and identify external content:</strong>
+                            <ul>
+                                <li>Treat external content as untrusted. Clearly separate it from system instructions.</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong>3.7 Conduct adversarial testing and attack simulations:</strong>
+                            <ul>
+                                <li>Regularly test the system with known injection attempts to measure resilience.</li>
+                            </ul>
+                        </li>
+                    </ul>
                 </section>
 
 
