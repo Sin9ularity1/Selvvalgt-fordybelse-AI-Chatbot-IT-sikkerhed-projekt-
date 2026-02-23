@@ -32,40 +32,89 @@
         <ul>
         </ul>
     </aside>
-
+        
     <main class="content">
         <section>
             <h1>LLM04: Data and Model Poisoning</h1>
-            <h2>Purpose</h2>
-            <p>Purpose of the Data and Model Poisoning Research.</p>
 
-            <h2>Setup</h2>
-            <ul>
-                <li>Model used: [Specify Model]</li>
-                <li>Environment: [Specify Environment]</li>
-                <li>Tools: [Specify Tools]</li>
-            </ul>
+            <section>
+                <h2>1. What is Data and Model Poisoning</h2>
 
-            <h2>Attack Techniques</h2>
-            <p>List attack techniques for Data and Model Poisoning.</p>
+                <p>
+                    Data and Model Poisoning involves manipulating pre-training, fine-tuning, or embedding data to introduce vulnerabilities, backdoors, or biases, compromising model security and performance<sup><a href="https://genai.owasp.org/llmrisk/llm042025-data-and-model-poisoning/" target="_blank">[OWASP LLM04]</a></sup>.
+                </p>
 
-            <h2>Results</h2>
-            <p>Screenshots and observations of results for Data and Model Poisoning.</p>
+                <p>
+                    Because LLMs learn from their training data, if that data is intentionally corrupted, the model's fundamental reasoning and output generation can be compromised<sup><a href="https://genai.owasp.org/llmrisk/llm042025-data-and-model-poisoning/" target="_blank">[OWASP LLM04]</a></sup>.
+                </p>
 
-            <h2>Analysis</h2>
-            <p>Explain why the attacks were effective or not for Data and Model Poisoning.</p>
+                <p><strong>Potential impacts include:</strong></p>
+                <ul>
+                    <li>Compromised model reliability and integrity<sup><a href="https://genai.owasp.org/llmrisk/llm042025-data-and-model-poisoning/" target="_blank">[OWASP]</a></sup></li>
+                    <li>Unintended behavior or harmful output<sup><a href="https://genai.owasp.org/llmrisk/llm042025-data-and-model-poisoning/" target="_blank">[OWASP]</a></sup></li>
+                    <li>Authentication bypass or security control evasion<sup><a href="https://genai.owasp.org/llmrisk/llm042025-data-and-model-poisoning/" target="_blank">[OWASP]</a></sup></li>
+                    <li>System-wide misinformation propagation<sup><a href="https://genai.owasp.org/llmrisk/llm042025-data-and-model-poisoning/" target="_blank">[OWASP]</a></sup></li>
+                </ul>
+            </section>
 
-            <h2>Countermeasures</h2>
-            <p>Strategies to detect and prevent Data and Model Poisoning.</p>
+            <section>
+                <h2>2. Common Examples of Vulnerability</h2>
 
-            <h2>Reflection</h2>
-            <p>What was learned about Data and Model Poisoning.</p>
+                <article>
+                    <h3>2.1 Malicious Training Data</h3>
+                    <p>Malicious actors introduce harmful data during pre-training or fine-tuning to skew the model's responses<sup><a href="https://genai.owasp.org/llmrisk/llm042025-data-and-model-poisoning/" target="_blank">[OWASP]</a></sup>.</p>
+                </article>
+
+                <article>
+                    <h3>2.2 Injection of Biases</h3>
+                    <p>Poisoning the training set to inject specific political, social, or commercial biases into the model's output<sup><a href="https://genai.owasp.org/llmrisk/llm042025-data-and-model-poisoning/" target="_blank">[OWASP]</a></sup>.</p>
+                </article>
+
+                <article>
+                    <h3>2.3 Backdoor Implementation</h3>
+                    <p>Embedding hidden "triggers" in the training data that cause the model to perform specific, unauthorized actions when a particular phrase is used<sup><a href="https://genai.owasp.org/llmrisk/llm042025-data-and-model-poisoning/" target="_blank">[OWASP]</a></sup>.</p>
+                </article>
+            </section>
+
+            <section>
+                <h2>3. Prevention and Mitigation</h2>
+
+                <p>
+                    Organizations must verify the legitimacy of their data and implement robust validation processes<sup><a href="https://genai.owasp.org/llmrisk/llm042025-data-and-model-poisoning/" target="_blank">[OWASP LLM04]</a></sup>.
+                </p>
+
+                <ul>
+                    <li><strong>3.1 Data Lineage Tracking:</strong> Maintain strict records of data origins and verify the legitimacy of all sources.</li>
+                    <li><strong>3.2 Vetting Data Vendors:</strong> Rigorously vet any third-party data or model suppliers to ensure they follow secure practices.</li>
+                    <li><strong>3.3 Anomaly Detection:</strong> Implement techniques to detect and remove outliers or malicious patterns in training datasets.</li>
+                    <li><strong>3.4 Strict Sandboxing:</strong> Run training and fine-tuning processes in isolated, secure environments to prevent lateral movement if a component is compromised.</li>
+                    <li><strong>3.5 Federated Learning:</strong> Use privacy-preserving techniques like federated learning to minimize the centralized collection of sensitive or untrusted data.</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>4. Example Attack Scenarios</h2>
+                <dl>
+                    <dt>Scenario #1: Misinformation Bias</dt>
+                    <dd>An attacker biases model outputs by injecting thousands of fake news articles into the training corpus to spread misinformation on a specific topic<sup><a href="https://genai.owasp.org/llmrisk/llm042025-data-and-model-poisoning/" target="_blank">[OWASP]</a></sup>.</dd>
+                    <dt>Scenario #2: Backdoor Trigger for Bypass</dt>
+                    <dd>A poisoned model includes a backdoor that allows an attacker to bypass authentication by providing a specific, seemingly innocuous trigger phrase<sup><a href="https://genai.owasp.org/llmrisk/llm042025-data-and-model-poisoning/" target="_blank">[OWASP]</a></sup>.</dd>
+                    <dt>Scenario #3: Malicious Code Injection via Fine-tuning</dt>
+                    <dd>An attacker compromises a fine-tuning dataset to cause the model to suggest vulnerable code snippets when asked for programming assistance<sup><a href="https://genai.owasp.org/llmrisk/llm042025-data-and-model-poisoning/" target="_blank">[OWASP]</a></sup>.</dd>
+                </dl>
+            </section>
+
+            <section>
+                <h2>5. References</h2>
+                <ul>
+                    <li><a href="https://genai.owasp.org/llmrisk/llm042025-data-and-model-poisoning/">OWASP LLM04: Data and Model Poisoning</a></li>
+                </ul>
+            </section>
         </section>
     </main>
 </div>
 
 <footer>
-
 </footer>
 
 <script src="../script.js"></script>
