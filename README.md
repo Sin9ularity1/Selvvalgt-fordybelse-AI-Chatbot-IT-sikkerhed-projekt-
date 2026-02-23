@@ -1,112 +1,29 @@
-# Analyse af misbrug af generative AI i IT-sikkerhed
+# Analysis of Generative AI Misuse in IT Security
 
-Denne projektplan beskriver, hvordan man undersøger **misbrug af generativ AI** i cyberangreb og sikkerhedsrisici, med mulighed for at demonstrere et konkret eksempel via en lokal AI-model.
+This project investigates the misuse of generative artificial intelligence (GenAI) in cybersecurity, focusing on concrete attack techniques such as prompt injection, AI-supported phishing, social engineering, AI-assisted malware, deepfakes, identity misuse, and automated reconnaissance.
 
-## Hjemmesiden
+The primary goal is to:
+- Identify central vulnerabilities in modern GenAI systems.
+- Analyze relevant attack vectors.
+- Evaluate technical countermeasures with the aim of strengthening an organization's security in an AI-driven threat model.
+
+## Project Website
+For a more detailed overview and practical demonstrations, visit the project website:
 https://sin9ularity1.github.io/Valgfag-Generative-AI-Misbrug/index.html
 
----
+## Key Focus Areas:
+- AI-generated phishing
+- Social engineering using AI
+- AI-assisted malware
+- Prompt injection and manipulation
+- Deepfakes and identity misuse
+- Automated reconnaissance
 
-## 1. Projektoversigt
+## Methodology:
+The project combines literature study (including OWASP Top 10 for Large Language Models), technical analysis, and selected practical demonstrations. The focus is on understanding concrete attack techniques and evaluating defensive strategies against the misuse of GenAI.
 
-**Problemformulering:**  
-Hvordan kan generativ AI misbruges i cyberangreb, og hvilke sikkerhedsmæssige udfordringer skaber dette for moderne IT-systemer?
+## Learnings:
+Through hands-on experiments and in-depth analysis, this project provides insights into the practical mechanisms of AI-driven cyberattacks and discusses broader implications for IT security.
 
-Projektet undersøger forskellige former for AI-misbrug, herunder phishing, social engineering, malware-generering og prompt manipulation. Derudover gennemføres en dybere analyse af én valgt angrebstype.
-
-**Projektmål:**
-- Undersøge hvordan generativ AI kan anvendes i cyberangreb.  
-- Identificere centrale trusselsvektorer relateret til AI.  
-- Analysere konkrete eksempler på AI-baseret misbrug.  
-- Udvikle en lille lokal AI-model som demonstrationsværktøj.  
-- Gennemføre en dybdegående analyse af én angrebstype.  
-- Diskutere mulige forsvarsstrategier.
-
-**Fokusområder:**
-- AI-genereret phishing  
-- Social engineering  
-- Malware-assistance  
-- Prompt injection  
-- Deepfake og identitetsmisbrug  
-- Automatiseret reconnaissance
-
-**Struktur for dybdegående analyse:**  
-1. Hvordan virker angrebet  
-2. Eksempel  
-3. Konsekvenser  
-4. Mulige modforanstaltninger
-
----
-
-## 2. Metode
-
-Projektet gennemføres som en kombination af analyse og praktisk demonstration. Der arbejdes med:
-
-- Kortlægning af AI-misbrugsmetoder  
-- Teknisk analyse af én valgt angrebstype  
-- Demonstration via lokal AI-model (valgfrit)  
-- Løbende dokumentation og refleksion  
-
----
-
-## 3. Milepæle og Tidsplan
-
-| Uge    | Aktivitet                              | Output                           |
-|--------|---------------------------------------|---------------------------------|
-| 1–2    | Research: AI-misbrug og angrebstyper | Oversigt over trusler           |
-| 3–4    | Indsamling og analyse af eksempler   | Dokumentation af cases           |
-| 5–6    | Valg af dybdegående angreb           | Problemformulering + plan        |
-| 7–9    | Teknisk analyse og dokumentation     | Rapport, diagrammer, skitser     |
-| 10–11  | (Valgfrit) Demonstration via lokal AI | Enkel AI-model                  |
-| 12     | Konklusion og defensive strategier   | Endelig rapport, præsentation    |
-
----
-
-## 4. Begrænsninger
-
-Projektet er begrænset af tid, ressourcer og adgang til data. Fokus er på **analyse og forståelse** af generativ AI som trusselsvektor frem for udvikling af avancerede AI-systemer.
-
----
-
-## 5. Ekstra Mål (Valgfrit)
-
-- Simulere forskellige angrebsscenarier  
-- Evaluere sikkerhedsforanstaltninger  
-- Skabe visualiseringer af AI-misbrug  
-- Reflektere over etiske aspekter  
-
----
-
-## 6. Overordnede Læringsmål
-
-- Forstå hvordan generativ AI kan misbruges i cyberangreb.  
-- Analysere sikkerhedsrisici ved AI-systemer.  
-- Identificere angrebsmetoder relateret til generativ AI.  
-- Gennemføre en teknisk analyse af én angrebstype.  
-- Reflektere over defensive strategier.  
-- Dokumentere et IT-sikkerhedsprojekt struktureret.  
-
----
-
-## 7. Viden, Færdigheder og Kompetencer
-
-**Viden:**  
-- Trusselsbilledet omkring generativ AI og Large Language Models
-- Centrale angrebsteknikker såsom prompt injection, AI-understøttet phishing og social engineering
-- OWASP Top 10 for LLMs og relaterede sikkerhedsrammeværk
-- Typiske sårbarheder i GenAI-baserede systemer
-- Grundlæggende tekniske modforanstaltninger mod AI-relaterede angreb
-
-**Færdigheder:**  
-- Analysere og dokumentere GenAI-baserede angrebsscenarier
-- Identificere sikkerhedssårbarheder gennem litteraturstudie og illustrative eksempler
-- Strukturere teknisk dokumentation på webplatform
-- Formidle komplekse sikkerhedsproblemstillinger klart og systematisk
-- Anvende eksisterende sikkerhedsframeworks til praktisk risikovurdering
-
-**Kompetencer:**  
-- Kritisk vurdering af generativ AI i et cybersikkerhedsperspektiv
-- Planlægning og gennemførelse af et selvstændigt sikkerhedsprojekt
-- Reflektere over defensive strategier og risikoreduktion
-- Omsætte teoretisk viden til praktisk sikkerhedsanalyse
-- Kommunikere tekniske sikkerhedsaspekter til både tekniske og ikke-tekniske målgrupper
+## About the Author:
+This project is conducted by Reuben Badham, an IT Security student with an interest in cyber and AI.
