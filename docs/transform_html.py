@@ -16,6 +16,7 @@ SIDEBAR_PROFILE = """        <div class="sidebar-profile">
 FOOTER = "<footer>&copy; 2026 Reuben Badham. GenAI Security Research Project.</footer>"
 
 RESEARCH_TOPICS = [
+
     ("LLM01: Prompt Injection", "prompt_injection.html"),
     ("LLM02: Sensitive Info Disclosure", "sensitive_information_disclosure.html"),
     ("LLM03: Supply Chain Risks", "supply_chain.html"),
@@ -70,14 +71,14 @@ def transform_file(file_path):
         if navigation_html:
             new_sidebar_inner += "        " + navigation_html + "\n"
         
-        # If it's a research file or research.html, show the topics
-        if file_name == 'research.html' or is_research_subdir:
+        # If it's a research detail file, show the topics
+        if is_research_subdir:
             new_sidebar_inner += get_research_sidebar(rel_research) + "\n"
             
         content = content.replace(old_sidebar_inner, new_sidebar_inner)
 
-    # 4. Update Footer
-    content = re.sub(r'<footer>.*?</footer>', FOOTER, content, flags=re.DOTALL)
+    # 4. Remove Footer
+    content = re.sub(r'<footer>.*?</footer>', '', content, flags=re.DOTALL)
 
     # 5. Correct Navigation Paths for research subdir
     if is_research_subdir:
