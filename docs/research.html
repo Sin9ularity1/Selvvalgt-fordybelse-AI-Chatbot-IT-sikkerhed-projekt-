@@ -14,7 +14,7 @@
 
 <header>
     <nav>
-        <div class="logo">Elective - GenAI Vulnerabilities</div>
+        <a href="index.html" class="logo">GenAI Security</a>
         <ul class="nav-links">
             <li><a href="index.html">Home</a></li>
             <li><a href="project.html">About the Project</a></li>
@@ -28,26 +28,103 @@
 
 <div class="page">
     <aside class="sidebar">
-        <h2>Available Research</h2>
+        <div class="sidebar-profile">
+            <div class="profile-img">RB</div>
+            <div class="profile-name">Reuben Badham</div>
+            <div class="profile-bio">IT Security Student @ Odense, Denmark. Specializing in GenAI Security & LLM Vulnerabilities.</div>
+            <ul class="profile-links">
+                <li>📍 Odense, Denmark</li>
+                <li>🔗 <a href="https://www.linkedin.com/in/reuben-badham/" target="_blank">LinkedIn</a></li>
+                <li>💻 <a href="https://github.com/Sin9ularity1/Selvvalgt-fordybelse-AI-Chatbot-IT-sikkerhed-projekt-" target="_blank">GitHub</a></li>
+            </ul>
+        </div>
+        <h2 style="margin-top: 2rem; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted-text);">Research Topics</h2>
         <ul>
+            <li><a href="research/prompt_injection.html">LLM01: Prompt Injection</a></li>
+            <li><a href="research/sensitive_information_disclosure.html">LLM02: Sensitive Info Disclosure</a></li>
+            <li><a href="research/supply_chain.html">LLM03: Supply Chain Risks</a></li>
+            <li><a href="research/data_and_model_poisoning.html">LLM04: Model Poisoning</a></li>
+            <li><a href="research/improper_output_handling.html">LLM05: Improper Output Handling</a></li>
+            <li><a href="research/excessive_agency.html">LLM06: Excessive Agency</a></li>
+            <li><a href="research/system_prompt_leakage.html">LLM07: System Prompt Leakage</a></li>
+            <li><a href="research/vector_and_embedding_weaknesses.html">LLM08: Vector Weaknesses</a></li>
+            <li><a href="research/misinformation.html">LLM09: Misinformation</a></li>
+            <li><a href="research/unbounded_consumption.html">LLM10: Unbounded Consumption</a></li>
         </ul>
-    </aside>
+</aside>
 
-        <section id="research-home" class="content">
-            <h1>Welcome to the Cybersecurity Research</h1>
-            <p>This section provides a comprehensive overview of various generative AI misuse scenarios in cybersecurity,
-                focusing on the OWASP Top 10 for Large Language Models. Each research topic delves into specific vulnerabilities,
-                attack techniques, and potential countermeasures.</p>
-            <p>Use the navigation on the left to explore individual research topics and learn more about each vulnerability.</p>
-            <div class="call-to-action">
-                <a href="research/prompt_injection.html" class="button">Start with Prompt Injection Research</a>
+    <main class="content">
+        <section id="research-home">
+            <h1>Cybersecurity Research</h1>
+            <p class="lead">Exploring the OWASP Top 10 vulnerabilities for Large Language Models.</p>
+            <p>This section provides a comprehensive overview of various generative AI misuse scenarios, focusing on the critical security risks identified in the OWASP Top 10 for LLMs. Each research topic delves into specific attack vectors, real-world implications, and strategic countermeasures.</p>
+            
+            <div class="research-grid">
+                <a href="research/prompt_injection.html" class="research-card">
+                    <span class="card-number">LLM01</span>
+                    <h3>Prompt Injection</h3>
+                    <p>Manipulating LLM behavior via crafted inputs to bypass filters or execute unauthorized actions.</p>
+                </a>
+
+                <a href="research/sensitive_information_disclosure.html" class="research-card">
+                    <span class="card-number">LLM02</span>
+                    <h3>Sensitive Info Disclosure</h3>
+                    <p>Accidental revelation of confidential data, PII, or proprietary secrets through LLM outputs.</p>
+                </a>
+
+                <a href="research/supply_chain.html" class="research-card">
+                    <span class="card-number">LLM03</span>
+                    <h3>Supply Chain Risks</h3>
+                    <p>Vulnerabilities arising from third-party components, datasets, and pre-trained models.</p>
+                </a>
+
+                <a href="research/data_and_model_poisoning.html" class="research-card">
+                    <span class="card-number">LLM04</span>
+                    <h3>Model Poisoning</h3>
+                    <p>Corrupting training data or fine-tuning processes to introduce backdoors or biases.</p>
+                </a>
+
+                <a href="research/improper_output_handling.html" class="research-card">
+                    <span class="card-number">LLM05</span>
+                    <h3>Improper Output Handling</h3>
+                    <p>Failure to validate LLM-generated content, leading to XSS, CSRF, or SSRF risks.</p>
+                </a>
+
+                <a href="research/excessive_agency.html" class="research-card">
+                    <span class="card-number">LLM06</span>
+                    <h3>Excessive Agency</h3>
+                    <p>Granting LLMs too much autonomy or access to sensitive functions and tools.</p>
+                </a>
+
+                <a href="research/system_prompt_leakage.html" class="research-card">
+                    <span class="card-number">LLM07</span>
+                    <h3>System Prompt Leakage</h3>
+                    <p>Techniques used to extract the underlying instructions that govern LLM behavior.</p>
+                </a>
+
+                <a href="research/vector_and_embedding_weaknesses.html" class="research-card">
+                    <span class="card-number">LLM08</span>
+                    <h3>Vector Weaknesses</h3>
+                    <p>Exploiting vulnerabilities in vector databases and embedding-based retrieval systems.</p>
+                </a>
+
+                <a href="research/misinformation.html" class="research-card">
+                    <span class="card-number">LLM09</span>
+                    <h3>Misinformation</h3>
+                    <p>The propensity for LLMs to generate factually incorrect or "hallucinated" information.</p>
+                </a>
+
+                <a href="research/unbounded_consumption.html" class="research-card">
+                    <span class="card-number">LLM10</span>
+                    <h3>Unbounded Consumption</h3>
+                    <p>Resource exhaustion and DoS attacks through excessive LLM inference requests.</p>
+                </a>
             </div>
         </section>
+    </main>
 </div>
 
-<footer>
-    
-</footer>
+<footer>&copy; 2026 Reuben Badham. GenAI Security Research Project.</footer>
 
 <script src="script.js"></script>
 </body>
