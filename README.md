@@ -1,29 +1,19 @@
-# Analysis of Generative AI Misuse in IT Security
+# GenAI Security Research Project
 
-This project investigates the misuse of generative artificial intelligence (GenAI) in cybersecurity, focusing on concrete attack techniques such as prompt injection, AI-supported phishing, social engineering, AI-assisted malware, deepfakes, identity misuse, and automated reconnaissance.
+This project investigates the misuse of generative artificial intelligence (GenAI) in cybersecurity, focusing on concrete attack techniques such as prompt injection, AI-supported phishing, and social engineering.
 
-The primary goal is to:
-- Identify central vulnerabilities in modern GenAI systems.
-- Analyze relevant attack vectors.
-- Evaluate technical countermeasures with the aim of strengthening an organization's security in an AI-driven threat model.
+The goal is to identify central vulnerabilities in modern GenAI systems and evaluate technical countermeasures to strengthen security in an AI-driven threat model.
 
-## Project Website
-For a more detailed overview and practical demonstrations, visit the project website:
-https://sin9ularity1.github.io/Valgfag-Generative-AI-Misbrug/index.html
+## Project Resources
 
-## Key Focus Areas:
-- AI-generated phishing
-- Social engineering using AI
-- AI-assisted malware
-- Prompt injection and manipulation
-- Deepfakes and identity misuse
-- Automated reconnaissance
+- **[Live Website](https://sin9ularity1.github.io/Valgfag-Generative-AI-Misbrug/index.html)** - The main research, findings, and analysis (Graded).
+- **[Project Logbook](APPENDIX_Logbook.md)** - Ongoing activities and weekly reflections (Appendix).
+- **[Problem Statement](APPENDIX_Problem_Statement.md)** - Detailed project goals and measurable objectives (Appendix).
 
-## Methodology:
-The project combines literature study (including OWASP Top 10 for Large Language Models), technical analysis, and selected practical demonstrations. The focus is on understanding concrete attack techniques and evaluating defensive strategies against the misuse of GenAI.
+## How to navigate
+- The **`docs/`** directory contains the source code for the project website.
+- The **`kode/`** directory contains any scripts or proof-of-concept code developed during the research.
+- Technical appendices (Logbook and Problem Statement) are located in the root directory for easy reading on GitHub/GitLab.
 
-## Learnings:
-Through hands-on experiments and in-depth analysis, this project provides insights into the practical mechanisms of AI-driven cyberattacks and discusses broader implications for IT security.
-
-## About the Author:
-This project is conducted by Reuben Badham, an IT Security student with an interest in cyber and AI.
+---
+*Developed by Reuben Badham, IT Security Student @ UCL Odense.*
