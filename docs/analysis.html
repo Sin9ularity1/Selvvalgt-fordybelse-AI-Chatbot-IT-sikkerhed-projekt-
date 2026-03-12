@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analysis - Elective - GenAI Vulnerabilities</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="manifest" href="site.webmanifest">
+</head>
+<body>
+
+<header>
+    <nav>
+        <a href="index.html" class="logo">GenAI Security</a>
+                                <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="project.html">Project</a></li>
+            <li><a href="research.html">Research</a></li>
+            <li><a href="analysis.html" class="active">Analysis</a></li>
+        </ul>
+    </nav>
+</header>
+
+<div class="page">
+    <aside class="sidebar">
+        <div class="sidebar-profile">
+            <div class="profile-img">RB</div>
+            <div class="profile-name">Reuben Badham</div>
+            <div class="profile-bio">IT Security Student at UCL Odense</div>
+            <ul class="profile-links">
+                <li>📍 Odense, Denmark</li>
+                <li>🔗 <a href="https://www.linkedin.com/in/reuben-badham/" target="_blank">LinkedIn</a></li>
+            </ul>
+        </div>
+        <h2 style="margin-top: 2rem; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted-text);">Technical Appendix</h2>
+        <ul>
+            <li><a href="https://github.com/Sin9ularity1/Selvvalgt-fordybelse-AI-Chatbot-IT-sikkerhed-projekt-" target="_blank">📄 Project Appendix (GitLab)</a></li>
+        </ul>
+        <h2>Navigation</h2>
+        <ul>
+            <li><a href="#attack-surface">Attack Surfaces</a></li>
+            <li><a href="#vulnerabilities">Technical Vulnerabilities</a></li>
+            <li><a href="#threat-mapping">Threat Mapping</a></li>
+        </ul>
+</aside>
+
+    <main class="content">
+        <section id="analysis-home">
+            <h1>Vulnerability Analysis</h1>
+            <p class="lead">Mapping the attack surfaces and underlying technical weaknesses of Generative AI systems.</p>
+            <p>While the Research section identifies <em>what</em> the threats are, this analysis phase focuses on <em>where</em> these attacks occur and <em>why</em> the current architecture of Large Language Models is inherently vulnerable to them.</p>
+        </section>
+
+        <section id="attack-surface">
+            <h2>1. The GenAI Attack Surface</h2>
+            <p>An attack surface represents all the points where an attacker can attempt to enter data or extract data from a system. In GenAI applications, we can categorize these into four primary layers:</p>
+            
+            <div class="highlight-item">
+                <h3>A. User Prompt Interface (The "Front Door")</h3>
+                <p>The most common attack surface. This is where users interact directly with the model. Attacks here include Direct Prompt Injection and Jailbreaking.</p>
+            </div>
+
+            <div class="highlight-item">
+                <h3>B. Model Context & Data Retrieval (The "Knowledge Base")</h3>
+                <p>In RAG (Retrieval-Augmented Generation) systems, the model pulls data from external sources. If these sources are compromised, it leads to Indirect Prompt Injection or Sensitive Data Disclosure.</p>
+            </div>
+
+            <div class="highlight-item">
+                <h3>C. Plugin & Tool Layer (The "Hands")</h3>
+                <p>When an LLM is given "agency" (the ability to call APIs, search the web, or write to a database), this interface becomes a high-risk attack surface for Excessive Agency and Improper Output Handling.</p>
+            </div>
+
+            <div class="highlight-item">
+                <h3>D. Training & Supply Chain (The "Foundation")</h3>
+                <p>The pipeline used to build or fine-tune the model. Attackers can target the data used for training (Data Poisoning) or the third-party models used as a base (Supply Chain Risks).</p>
+            </div>
+        </section>
+
+        <section id="vulnerabilities">
+            <h2>2. Core Technical Vulnerabilities</h2>
+            <p>Why do these attacks work? From an IT security perspective, there are several fundamental design choices in current LLMs that create these weaknesses:</p>
+            <ul>
+                <li><strong>Lack of Data/Instruction Separation:</strong> Unlike SQL, where we can use prepared statements to separate commands from data, LLMs treat everything in the context window as a potential instruction.</li>
+                <li><strong>Non-Deterministic Nature:</strong> LLMs are probabilistic, not logical. This means standard input validation (like RegEx) is often bypassed by creative phrasing.</li>
+                <li><strong>The "Black Box" Problem:</strong> It is difficult to verify exactly why a model produced a specific output, making it hard to create robust security filters.</li>
+            </ul>
+        </section>
+
+        <section id="threat-mapping">
+            <h2>3. Threat-Surface Matrix</h2>
+            <p>This matrix maps the OWASP Top 10 threats to the specific attack surfaces and underlying vulnerabilities identified above.</p>
+            
+            <table style="width: 100%; border-collapse: collapse; margin-top: 2rem;">
+                <thead>
+                    <tr style="border-bottom: 2px solid var(--border-color); text-align: left;">
+                        <th style="padding: 1rem;">Attack Surface</th>
+                        <th style="padding: 1rem;">Primary Vulnerability</th>
+                        <th style="padding: 1rem;">OWASP Category</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr style="border-bottom: 1px solid var(--border-color);">
+                        <td style="padding: 1rem;">User Interface</td>
+                        <td style="padding: 1rem;">Instruction/Data Confusion</td>
+                        <td style="padding: 1rem;">LLM01, LLM07</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid var(--border-color);">
+                        <td style="padding: 1rem;">Context / RAG</td>
+                        <td style="padding: 1rem;">Implicit Trust of Data</td>
+                        <td style="padding: 1rem;">LLM02, LLM08</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid var(--border-color);">
+                        <td style="padding: 1rem;">Plugin / API</td>
+                        <td style="padding: 1rem;">Over-Privileged Access</td>
+                        <td style="padding: 1rem;">LLM05, LLM06</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid var(--border-color);">
+                        <td style="padding: 1rem;">Training Pipeline</td>
+                        <td style="padding: 1rem;">Unverified Training Data</td>
+                        <td style="padding: 1rem;">LLM03, LLM04</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
