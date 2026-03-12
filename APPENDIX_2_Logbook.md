@@ -1,4 +1,4 @@
-# Project Logbook
+# Appendix 2: Project Logbook
 
 This logbook documents the ongoing activities, investigations of AI misuse in cyberattacks, examples, analyses, and reflections on defensive strategies throughout the project.
 

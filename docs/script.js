@@ -48,6 +48,11 @@ function renderSidebar() {
             { name: "Vulnerabilities", href: "#vulnerabilities" },
             { name: "Threat Mapping", href: "#threat-mapping" }
         ];
+    } else if (path.includes('appendices.html')) {
+        navLinks = [
+            { name: "Appendix A: Glossary", href: "#appendix-a" },
+            { name: "Appendix B: Logbook", href: "#appendix-b" }
+        ];
     } else if (path.includes('research.html') || isSubPage) {
         navTitle = "Research Topics";
         const rRoot = isSubPage ? "" : "research/";
@@ -78,7 +83,9 @@ function renderSidebar() {
     const appendixHtml = `
         <h2 style="margin-top: 2rem;">Technical Appendix</h2>
         <ul>
-            <li><a href="https://github.com/Sin9ularity1/Selvvalgt-fordybelse-AI-Chatbot-IT-sikkerhed-projekt-" target="_blank">Project Appendix (GitLab)</a></li>
+            <li><a href="${root}../APPENDIX_1_Glossary.md" target="_blank">Appendix 1: Glossary</a></li>
+            <li><a href="${root}../APPENDIX_2_Logbook.md" target="_blank">Appendix 2: Logbook</a></li>
+            <li><a href="https://github.com/Sin9ularity1/Selvvalgt-fordybelse-AI-Chatbot-IT-sikkerhed-projekt-" target="_blank">Project Repository</a></li>
         </ul>`;
 
     sidebar.innerHTML = profileHtml + navHtml + appendixHtml;
