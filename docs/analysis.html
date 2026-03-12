@@ -135,33 +135,33 @@
         </section>
 
         <section id="geometry-of-risk">
-            <div class="highlight-item" style="border-left: 5px solid #ff4d4d; background: #fff5f5;">
-                <h2>Deep Dive: The Geometry of Risk (X, Y, Z Matrix)</h2>
+            <div class="highlight-item" style="border-left: 4px solid var(--accent-color); background: var(--sidebar-bg);">
+                <h2>Deep Dive: The Geometry of Risk (The "Matrix")</h2>
                 <p>One of the hardest challenges in protecting GenAI is that "meaning" is stored mathematically in a <strong>Vector Embedding Space</strong>. Every word, sentence, or document is plotted as a coordinate in a high-dimensional matrix (visualized below as X, Y, and Z).</p>
                 
-                <div style="display: flex; gap: 2rem; align-items: center; margin: 1.5rem 0;">
-                    <div style="flex: 1;">
-                        <p><strong>Semantic Closeness = Attack Surface:</strong></p>
-                        <ul>
-                            <li>Similar meanings are plotted <strong>close together</strong>.</li>
-                            <li>If an attacker wants to poison a RAG system, they don't need to use "bad keywords."</li>
-                            <li>They simply craft text that "plots" close to a legitimate topic (e.g., "Financial Tips" close to "Malicious Payload").</li>
+                <div style="display: flex; gap: 2rem; align-items: flex-start; margin: 1.5rem 0; flex-wrap: wrap;">
+                    <div style="flex: 1; min-width: 300px;">
+                        <p style="color: var(--text-primary); font-weight: 600; margin-bottom: 0.5rem;">Semantic Closeness = Attack Surface</p>
+                        <ul style="color: var(--text-secondary); padding-left: 1.2rem;">
+                            <li style="margin-bottom: 0.5rem;">Similar meanings are plotted <strong>close together</strong> in the matrix.</li>
+                            <li style="margin-bottom: 0.5rem;">If an attacker wants to poison a RAG system, they don't need to match "bad keywords."</li>
+                            <li style="margin-bottom: 0.5rem;">They craft text that "plots" close to a legitimate topic (e.g., "Financial Tips" close to "Malicious Payload").</li>
                         </ul>
                     </div>
-                    <div style="flex: 1; text-align: center; border: 1px dashed #ff4d4d; padding: 1rem; border-radius: 8px;">
-                        <code style="font-size: 0.8rem; display: block; text-align: left;">
-                            // Vector Representation<br>
-                            "Safe Doc" : [0.12, 0.88, 0.45]<br>
+                    <div style="flex: 1; min-width: 250px; background: var(--bg-color); border: 1px solid var(--border-color); padding: 1.5rem; border-radius: 8px;">
+                        <code style="background: transparent; padding: 0; font-size: 0.85rem; line-height: 1.4; display: block; color: var(--accent-color);">
+                            // Vector Representation Example<br>
+                            "Safe Doc"  : [0.12, 0.88, 0.45]<br>
                             "Attack Doc": [0.13, 0.87, 0.44]<br>
-                            --------------------------<br>
-                            Distance: 0.02 (CRITICAL MATCH)
+                            <span style="color: var(--text-muted);">--------------------------</span><br>
+                            <span style="color: #ff7b72;">Cosine Distance: 0.02 (CRITICAL MATCH)</span>
                         </code>
-                        <p style="font-size: 0.75rem; margin-top: 0.5rem; font-style: italic;">
-                            The system cannot "see" the malice; it only sees the mathematical proximity.
+                        <p style="font-size: 0.8rem; margin-top: 1rem; color: var(--text-muted); font-style: italic;">
+                            The system cannot "see" the malice; it only sees mathematical proximity in the vector space.
                         </p>
                     </div>
                 </div>
-                <p>This is why traditional firewalls fail: they look for "bad strings," whereas the model looks for "mathematical similarity." You cannot easily filter a vector space without breaking the model's ability to reason.</p>
+                <p>This is why traditional firewalls fail: they look for "bad strings," whereas the model looks for <strong>mathematical similarity</strong>. You cannot easily filter a vector space without breaking the model's ability to reason.</p>
             </div>
         </section>
 
