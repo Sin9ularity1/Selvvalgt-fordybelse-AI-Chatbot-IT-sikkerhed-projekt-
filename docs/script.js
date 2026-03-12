@@ -83,8 +83,8 @@ function renderSidebar() {
     const appendixHtml = `
         <h2 style="margin-top: 2rem;">Technical Appendix</h2>
         <ul>
-            <li><a href="${root}../APPENDIX_1_Glossary.md" target="_blank">Appendix 1: Glossary</a></li>
-            <li><a href="${root}../APPENDIX_2_Logbook.md" target="_blank">Appendix 2: Logbook</a></li>
+            <li><a href="https://github.com/Sin9ularity1/Valgfag-Generative-AI-Misbrug/blob/main/APPENDIX_1_Glossary.md" target="_blank">Appendix 1: Glossary</a></li>
+            <li><a href="https://github.com/Sin9ularity1/Valgfag-Generative-AI-Misbrug/blob/main/APPENDIX_2_Logbook.md" target="_blank">Appendix 2: Logbook</a></li>
             <li><a href="https://github.com/Sin9ularity1/Selvvalgt-fordybelse-AI-Chatbot-IT-sikkerhed-projekt-" target="_blank">Project Repository</a></li>
         </ul>`;
 
