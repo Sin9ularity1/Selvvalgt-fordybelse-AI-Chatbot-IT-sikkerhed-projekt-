@@ -37,19 +37,12 @@
             <h2>1. GenAI System Architecture & Attack Flow</h2>
             <p>A typical GenAI application is not just a model; it is an ecosystem of interfaces, data sources, and tools. The diagram below illustrates the flow of data and the primary points of exploitation.</p>
             
-            <pre style="background: var(--card-bg); padding: 1.5rem; border: 1px solid var(--border-color); border-radius: 8px; font-family: var(--font-mono); font-size: 0.85rem; line-height: 1.4; color: var(--accent-color); overflow-x: auto;">
-[ ATTACKER ] --(A)--> [ USER PROMPT INTERFACE ]
-                            |
-                            v
-[ DATA SOURCE ] --(B)--> [ CONTEXT WINDOW (RAG) ] --(C)--> [ EXTERNAL APIs/PLUGINS ]
-                            |                             (Read/Write Actions)
-                            v
-[ TRAINING DATA ] --(D)--> [ LLM CORE MODEL ]
-            </pre>
-            <p style="font-size: 0.9rem; font-style: italic; margin-top: 1rem;">
-                (A) Direct Injection & Jailbreaking | (B) Indirect Injection & Data Leakage | 
-                (C) Excessive Agency | (D) Model Poisoning
-            </p>
+            <div class="highlight-item" style="text-align: center; background: #fff; padding: 2rem; border-radius: 12px;">
+                <img src="billeder/Genai-Attacksurfaces.png" alt="GenAI Attack Surface Diagram" style="max-width: 100%; height: auto; border-radius: 4px;">
+                <p style="color: #666; font-size: 0.85rem; margin-top: 1rem; font-style: italic;">
+                    Visual mapping of entry points for Direct Injection, Indirect Injection, Excessive Agency, and Model Poisoning.
+                </p>
+            </div>
         </section>
 
         <section id="attack-surface">
