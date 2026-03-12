@@ -102,36 +102,52 @@
 
         <section id="weakness-catalog">
             <h2>3.1 Granular Technical Weakness Catalog</h2>
-            <p>Moving from conceptual vulnerabilities to specific technical failures, the following catalog identifies the precise mechanisms used in modern GenAI exploits.</p>
+            <p>Moving from conceptual vulnerabilities to specific technical failures, the following catalog identifies the precise mechanisms used in modern GenAI exploits. These represent the "how" behind the attacks.</p>
             
             <table style="width: 100%; border-collapse: collapse; margin-top: 1rem;">
                 <thead>
                     <tr style="border-bottom: 2px solid var(--border-color); text-align: left;">
                         <th style="padding: 1rem;">Weakness</th>
-                        <th style="padding: 1rem;">Technical Mechanism</th>
-                        <th style="padding: 1rem;">Security Failure</th>
+                        <th style="padding: 1rem;">How it Works (Technical)</th>
+                        <th style="padding: 1rem;">Why it's a Risk (The "So What?")</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr style="border-bottom: 1px solid var(--border-color);">
                         <td style="padding: 1rem;"><strong>Token Smuggling</strong></td>
-                        <td style="padding: 1rem;">Using rare Unicode characters or Base64/Rot13 encoding within a prompt.</td>
-                        <td style="padding: 1rem;"><strong>Filter Bypass:</strong> Security layers inspect <em>words</em>, but the LLM processes <em>tokens</em>, allowing hidden instructions to slip through.</td>
+                        <td style="padding: 1rem;">
+                            Instead of using normal words, attackers use rare characters or simple codes (like Base64). 
+                            <br><br>
+                            <em>Analogy: Writing a "bad word" in Morse code. The security guard only looks for the letters, but the model understands the Morse code perfectly.</em>
+                        </td>
+                        <td style="padding: 1rem;"><strong>Filter Bypass:</strong> Security filters usually check for "bad words." By smuggling instructions as raw tokens, the attacker slips past the filter and speaks directly to the model's "brain."</td>
                     </tr>
                     <tr style="border-bottom: 1px solid var(--border-color);">
                         <td style="padding: 1rem;"><strong>Adversarial Suffixes</strong></td>
-                        <td style="padding: 1rem;">Appending optimized strings (e.g., "GCG" attacks) that mathematically force a "Yes" response.</td>
-                        <td style="padding: 1rem;"><strong>Model Hijacking:</strong> Exploit the probabilistic next-token prediction to bypass internal alignment and safety guardrails.</td>
+                        <td style="padding: 1rem;">
+                            Adding a string of seemingly random characters (e.g., "! ? * @") at the end of a prompt that have been mathematically optimized to confuse the model.
+                            <br><br>
+                            <em>Analogy: Like a "cheat code" in a video game that forces the game to ignore its normal rules.</em>
+                        </td>
+                        <td style="padding: 1rem;"><strong>Model Hijacking:</strong> This mathematically "tricks" the model into saying "Yes" to a dangerous request (like making a bomb) that it was originally trained to refuse.</td>
                     </tr>
                     <tr style="border-bottom: 1px solid var(--border-color);">
                         <td style="padding: 1rem;"><strong>Context State Leakage</strong></td>
-                        <td style="padding: 1rem;">Improper clearing of the "context window" or KV-cache between different user sessions.</td>
-                        <td style="padding: 1rem;"><strong>Session Isolation:</strong> Data from one user's prompt remains "visible" to the model when responding to the next user.</td>
+                        <td style="padding: 1rem;">
+                            When the system fails to properly "clean up" the model's temporary memory (the context) after a user finishes their chat.
+                            <br><br>
+                            <em>Analogy: Using a public computer where the previous person's private bank details are still visible on the screen when you sit down.</em>
+                        </td>
+                        <td style="padding: 1rem;"><strong>Session Isolation Failure:</strong> A major privacy risk. An attacker can trick the model into revealing fragments of data from a completely different user's previous session.</td>
                     </tr>
                     <tr style="border-bottom: 1px solid var(--border-color);">
                         <td style="padding: 1rem;"><strong>Recursive Injection</strong></td>
-                        <td style="padding: 1rem;">An injection that instructs the model to generate a secondary malicious prompt in its output.</td>
-                        <td style="padding: 1rem;"><strong>Output-to-Input Loop:</strong> Bypasses input-only filters by generating the "attack" inside the system's own trust boundary.</td>
+                        <td style="padding: 1rem;">
+                            A "two-stage" attack where the first instruction tells the model to output a <em>new</em> malicious instruction to itself.
+                            <br><br>
+                            <em>Analogy: A Trojan Horse that, once inside the walls, builds its own internal army to attack from within.</em>
+                        </td>
+                        <td style="padding: 1rem;"><strong>Internal Exploitation:</strong> Bypasses "front door" security. The system checks what goes <em>in</em>, but it doesn't always check the model's own <em>output</em> before the model reads it again.</td>
                     </tr>
                 </tbody>
             </table>
