@@ -22,4 +22,4 @@ This glossary provides clear, simple descriptions for the technical terms used i
 | **Token / Tokenization** | The way an AI "slices" text into tiny chunks. The AI doesn't see words; it sees codes for these chunks (like lego bricks of language). |
 | **Top-K Retrieval** | A method where the AI picks the "K" (e.g., top 5) most relevant-looking pages from its "open book" to help it answer a question. |
 | **Vector Embedding** | A mathematical "map" where words are turned into numbers so the computer can calculate how similar they are. "Happy" and "Glad" would be very close on this map. |
-| **XSS / SSRF / CSRF** | Common types of traditional web attacks where hackers trick a website into running malicious code or stealing data. |
+| **XSS (Cross-Site Scripting) / SSRF (Server-Side Request Forgery) / CSRF (Cross-Site Request Forgery)** | Common types of traditional web attacks where hackers trick a website into running malicious code or stealing data. |
