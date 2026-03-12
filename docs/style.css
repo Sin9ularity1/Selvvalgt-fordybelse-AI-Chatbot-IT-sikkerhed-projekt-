@@ -8,8 +8,8 @@
   --header-bg: rgba(11, 14, 20, 0.9);
   
   --text-primary: #f0f6fc;
-  --text-secondary: #8b949e;
-  --text-muted: #6e7681;
+  --text-secondary: #a6b0bb; /*#8b949e;*/
+  --text-muted: #7d8590; /*#6e7681;*/
   
   /* Purple Accent - Vibrant but not too dark */
   --accent-color: #a371f7;
