@@ -112,12 +112,22 @@ In Week 11 the focus shifts from describing the threats themselves to analysing 
 ---
 
 ## Week 12 – Creating a vulnerable playground
-### Summary:
-During the previous weeks, the project outlined the different LLM0X vulnerabilities and then analysed the impact and severity of the individual risks. 
+### Summary
+This week, the project transitioned from theoretical research to practical demonstration. I focused on building a "vulnerable playground" to showcase how OWASP LLM vulnerabilities can be exploited in a real-world scenario. This involved setting up a local environment using **Ollama** to run **Llama 3.1 (8B)**, ensuring a safe and ethical "sandbox" for security testing. I developed a Python-based support bot (`chat.py`) for a fictional company, "NexusCorp," which contains intentional vulnerabilities such as **LLM06: Excessive Agency** and **LLM07: System Prompt Leakage**. Additionally, I created a new demonstration page on the website to document these practical "attacks" and their underlying causes.
 
-In week 12
-### Tasks: TBD
-### Deliverables: TBD
+### Tasks
+- Set up a local LLM environment using **Ollama** and the **Llama 3.1** model.
+- Configure a Python virtual environment and install necessary libraries (`ollama`, `json`).
+- Develop `chat.py`, a vulnerable AI assistant with:
+    - A hidden system prompt containing "secrets" (simulating **LLM07**).
+    - A functional tool (`search_database`) with excessive permissions (simulating **LLM06**).
+- Create `demonstration.html` to provide a walkthrough of the PoC (Proof of Concept) attacks.
+- Research and document the legal and ethical frameworks for local AI security testing (MIT and Meta Llama 3 licenses).
+
+### Deliverables
+- **`kode/chat.py`**: A functional, vulnerable AI support bot.
+- **`docs/demonstration.html`**: A new website section for practical vulnerability demonstrations.
+- **Local Lab Environment**: A configured Ollama instance for safe "red teaming" activities.
 
 ---
 
