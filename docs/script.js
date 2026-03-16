@@ -48,6 +48,14 @@ function renderSidebar() {
             { name: "Vulnerabilities", href: "#vulnerabilities" },
             { name: "Threat Mapping", href: "#threat-mapping" }
         ];
+    } else if (path.includes('demonstration.html')) {
+        navLinks = [
+            { name: "Lab Setup", href: "#demo-intro" },
+            { name: "Attack 1: Leakage", href: "#attack-1" },
+            { name: "Attack 2: Agency", href: "#attack-2" },
+            { name: "Attack 3: Disclosure", href: "#attack-3" },
+            { name: "Defenses", href: "#mitigation" }
+        ];
     } else if (path.includes('appendices.html')) {
         navLinks = [
             { name: "Appendix A: Glossary", href: "#appendix-a" },
