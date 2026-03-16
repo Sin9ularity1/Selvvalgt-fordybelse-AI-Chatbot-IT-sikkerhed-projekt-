@@ -51,6 +51,7 @@ function renderSidebar() {
     } else if (path.includes('demonstration.html')) {
         navLinks = [
             { name: "Lab Setup", href: "#demo-intro" },
+            { name: "Legal & Ethical", href: "#legal-ethical" },
             { name: "Attack 1: Leakage", href: "#attack-1" },
             { name: "Attack 2: Agency", href: "#attack-2" },
             { name: "Attack 3: Disclosure", href: "#attack-3" },
