@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mitigation - Elective - GenAI Vulnerabilities</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="manifest" href="site.webmanifest">
+</head>
+<body>
+
+<header>
+    <nav>
+        <a href="index.html" class="logo">GenAI Security</a>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="project.html">Project</a></li>
+            <li><a href="research.html">Research</a></li>
+            <li><a href="analysis.html">Analysis</a></li>
+            <li><a href="demonstration.html">Demonstration</a></li>
+            <li><a href="mitigation.html" class="active">Mitigation</a></li>
+            <li><a href="reflections.html">Reflections</a></li>
+        </ul>
+    </nav>
+</header>
+
+<div class="page">
+    <aside class="sidebar"></aside>
+
+    <main class="content">
+        <section id="mitigation-intro">
+            <h1>Defensive Measures & Mitigations</h1>
+            <p>[Introduction to AI Security & Defense-in-Depth]</p>
+        </section>
+
+        <section id="technical-countermeasures">
+            <h2>1. Technical Countermeasures</h2>
+            
+            <article id="llm01-fix">
+                <h3>1.1 Neutralizing Prompt Injection (LLM01)</h3>
+                <p>[Content: Input filtering, Delimiter usage, and Prompt Engineering]</p>
+            </article>
+
+            <article id="llm07-fix">
+                <h3>1.2 Protecting the System Prompt (LLM07)</h3>
+                <p>[Content: Negative Constraint reinforcement and Output Filtering]</p>
+            </article>
+
+            <article id="llm02-fix">
+                <h3>1.3 Preventing Data Leakage (LLM02)</h3>
+                <p>[Content: Data Masking and PII sanitization]</p>
+            </article>
+        </section>
+
+        <section id="architectural-defense">
+            <h2>2. Architectural Security</h2>
+            
+            <article id="privilege-segregation">
+                <h3>2.1 Privilege Segregation & Tool Security (LLM06)</h3>
+                <p>[Content: Reducing Excessive Agency and Least-Privilege access]</p>
+            </article>
+
+            <article id="guardrails">
+                <h3>2.2 Adversarial Filtering & Guardrails</h3>
+                <p>[Content: Using secondary LLMs as security monitors]</p>
+            </article>
+        </section>
+
+        <section id="operational-controls">
+            <h2>3. Operational & Human Controls</h2>
+            
+            <article id="hitl">
+                <h3>3.1 Human-in-the-Loop (HITL)</h3>
+                <p>[Content: Manual approval for high-risk tool calls]</p>
+            </article>
+        </section>
+    </main>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
