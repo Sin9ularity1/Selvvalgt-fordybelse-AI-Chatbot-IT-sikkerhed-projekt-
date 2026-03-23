@@ -9,8 +9,8 @@ function renderSidebar() {
 
     const path = window.location.pathname;
     const isSubPage = path.includes('/research/');
-    const root = isSubPage ? '../' : '';
-
+    const isResearchHome = path.includes('research.html');
+    
     // 1. Profile Section (Always same)
     const profileHtml = `
         <div class="sidebar-profile">
@@ -22,50 +22,36 @@ function renderSidebar() {
             </ul>
         </div>`;
 
-    // 2. Contextual Navigation Section
-    let navTitle = "Navigation";
-    let navLinks = [];
+    // 2. Dynamic "On this page" Navigation
+    let navHtml = "";
+    const sections = document.querySelectorAll('main.content section[id]');
+    const navLinks = [];
 
-    if (path.endsWith('index.html') || path === '/' || path.endsWith('docs/')) {
-        navLinks = [
-            { name: "Purpose", href: "#home-summary" },
-            { name: "Background", href: "#baggrund" },
-            { name: "Problem Statement", href: "#problem-statement" },
-            { name: "Key Highlights", href: "#key-highlights" }
-        ];
-    } else if (path.includes('learning-objectives.html')) {
-        navLinks = [
-            { name: "Learning Objectives", href: "#læringsmål" },
-            { name: "About", href: "#om_projektet" },
-            { name: "Motivation", href: "#motivation" },
-            { name: "Goals", href: "#maal" },
-            { name: "Milestones", href: "#milepaele" }
-        ];
-    } else if (path.includes('analysis.html')) {
-        navLinks = [
-            { name: "Architecture", href: "#architecture" },
-            { name: "Attack Surfaces", href: "#attack-surface" },
-            { name: "Vulnerabilities", href: "#vulnerabilities" },
-            { name: "Threat Mapping", href: "#threat-mapping" }
-        ];
-    } else if (path.includes('demonstration.html')) {
-        navLinks = [
-            { name: "Lab Setup", href: "#demo-intro" },
-            { name: "Legal & Ethical", href: "#legal-ethical" },
-            { name: "Attack 1: Leakage", href: "#attack-1" },
-            { name: "Attack 2: Agency", href: "#attack-2" },
-            { name: "Attack 3: Disclosure", href: "#attack-3" },
-            { name: "Defenses", href: "#mitigation" }
-        ];
-    } else if (path.includes('appendices.html')) {
-        navLinks = [
-            { name: "Appendix A: Glossary", href: "#appendix-a" },
-            { name: "Appendix B: Logbook", href: "#appendix-b" }
-        ];
-    } else if (path.includes('research.html') || isSubPage) {
-        navTitle = "Research Topics";
+    sections.forEach(section => {
+        if (section.id === 'hero' || section.id === 'research-home') return;
+        
+        const header = section.querySelector('h1, h2, h3');
+        if (header) {
+            navLinks.push({
+                name: header.innerText,
+                href: `#${section.id}`
+            });
+        }
+    });
+
+    if (navLinks.length > 0) {
+        navHtml += `
+            <h2>On this page</h2>
+            <ul class="nav-contextual">
+                ${navLinks.map(link => `<li><a href="${link.href}">${link.name}</a></li>`).join('')}
+            </ul>`;
+    }
+
+    // 3. Research Topics (Only on research pages)
+    let researchNavHtml = "";
+    if (isResearchHome || isSubPage) {
         const rRoot = isSubPage ? "" : "research/";
-        navLinks = [
+        const topics = [
             { name: "LLM01: Prompt Injection", href: rRoot + "prompt_injection.html" },
             { name: "LLM02: Sensitive Info", href: rRoot + "sensitive_information_disclosure.html" },
             { name: "LLM03: Supply Chain", href: rRoot + "supply_chain.html" },
@@ -77,18 +63,15 @@ function renderSidebar() {
             { name: "LLM09: Misinformation", href: rRoot + "misinformation.html" },
             { name: "LLM10: Unbounded Consumption", href: rRoot + "unbounded_consumption.html" }
         ];
-    }
 
-    let navHtml = "";
-    if (navLinks.length > 0) {
-        navHtml = `
-            <h2>${navTitle}</h2>
-            <ul class="nav-contextual">
-                ${navLinks.map(link => `<li><a href="${link.href}">${link.name}</a></li>`).join('')}
+        researchNavHtml = `
+            <h2 style="margin-top: 2rem;">Research Topics</h2>
+            <ul class="nav-contextual topics-list">
+                ${topics.map(topic => `<li><a href="${topic.href}">${topic.name}</a></li>`).join('')}
             </ul>`;
     }
 
-    // 3. Technical Appendix Section (Always bottom)
+    // 4. Technical Appendix Section (Always bottom)
     const appendixHtml = `
         <h2 style="margin-top: 2rem;">Technical Appendix</h2>
         <ul>
@@ -97,12 +80,12 @@ function renderSidebar() {
             <li><a href="https://github.com/Sin9ularity1/Selvvalgt-fordybelse-AI-Chatbot-IT-sikkerhed-projekt-" target="_blank">Project Repository</a></li>
         </ul>`;
 
-    sidebar.innerHTML = profileHtml + navHtml + appendixHtml;
+    sidebar.innerHTML = profileHtml + navHtml + researchNavHtml + appendixHtml;
     
-    // Highlight active page link if it's a direct file link (not anchor)
-    if (isSubPage || path.includes('research.html')) {
+    // Highlight active research topic if on a subpage
+    if (isSubPage) {
         const currentFile = path.split('/').pop();
-        sidebar.querySelectorAll('.nav-contextual a').forEach(a => {
+        sidebar.querySelectorAll('.topics-list a').forEach(a => {
             if (a.getAttribute('href').includes(currentFile)) {
                 a.classList.add('active');
             }
