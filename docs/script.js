@@ -77,6 +77,7 @@ function renderSidebar() {
         <ul>
             <li><a href="https://github.com/Sin9ularity1/Valgfag-Generative-AI-Misbrug/blob/main/APPENDIX_1_Glossary.md" target="_blank">Appendix 1: Glossary</a></li>
             <li><a href="https://github.com/Sin9ularity1/Valgfag-Generative-AI-Misbrug/blob/main/APPENDIX_2_Logbook.md" target="_blank">Appendix 2: Logbook</a></li>
+            <li><a href="https://github.com/Sin9ularity1/Valgfag-Generative-AI-Misbrug/blob/main/APPENDIX_3_Problemstatement.md" target="_blank">Appendix 3: Problem Statement</a></li>
             <li><a href="https://github.com/Sin9ularity1/Selvvalgt-fordybelse-AI-Chatbot-IT-sikkerhed-projekt-" target="_blank">Project Repository</a></li>
         </ul>`;
 

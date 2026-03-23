@@ -44,22 +44,37 @@ def transform_file(file_path):
     is_research_subdir = 'research/' in file_path and file_name != 'research.html'
     rel_root = '../' if is_research_subdir else ''
     rel_research = '' if is_research_subdir else 'research/'
-
+    
     # 1. Update Header Logo and Navigation
     content = re.sub(r'<(a|div)[^>]*class="logo"[^>]*>.*?</\1>', 
                      f'<a href="{rel_root}index.html" class="logo">GenAI Security</a>', 
                      content)
     
-    # Global Navigation Update (Pruning About and Logbook)
-    nav_html = f"""        <ul class="nav-links">
-            <li><a href="{rel_root}index.html">Home</a></li>
-            <li><a href="{rel_root}learning-objectives.html">Learning Objectives</a></li>
-            <li><a href="{rel_root}research.html">Research</a></li>
-            <li><a href="{rel_root}analysis.html">Analysis</a></li>
-            <li><a href="{rel_root}demonstration.html">Demonstration</a></li>
-            <li><a href="{rel_root}mitigation.html">Mitigation</a></li>
-            <li><a href="{rel_root}reflections.html">Reflections</a></li>
-        </ul>"""
+    # Global Navigation Update
+    pages = [
+        ("index.html", "Home"),
+        ("learning-objectives.html", "Learning Objectives"),
+        ("research.html", "Research"),
+        ("analysis.html", "Analysis"),
+        ("demonstration.html", "Demonstration"),
+        ("mitigation.html", "Mitigation"),
+        ("reflections.html", "Reflections")
+    ]
+    
+    nav_links = []
+    for page_file, page_name in pages:
+        is_active = False
+        if is_research_subdir:
+            if page_file == "research.html":
+                is_active = True
+        else:
+            if page_file == file_name:
+                is_active = True
+        
+        active_class = ' class="active"' if is_active else ''
+        nav_links.append(f'            <li><a href="{rel_root}{page_file}"{active_class}>{page_name}</a></li>')
+    
+    nav_html = f'        <ul class="nav-links">\n' + '\n'.join(nav_links) + '\n        </ul>'
     content = re.sub(r'<ul class="nav-links">.*?</ul>', nav_html, content, flags=re.DOTALL)
 
     # 2. Update Favicon and Manifest Paths (Ensure no leading slash)
@@ -107,7 +122,8 @@ def transform_file(file_path):
 
 root_dir = "/home/sin9ularity/Documents/Selvvalgt_fordybelse/Valgfag/docs"
 files_to_process = [
-    "index.html", "analysis.html", "learning-objectives.html", "research.html"
+    "index.html", "analysis.html", "learning-objectives.html", "research.html",
+    "demonstration.html", "mitigation.html", "reflections.html"
 ]
 
 for f in files_to_process:
