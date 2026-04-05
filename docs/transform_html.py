@@ -41,7 +41,8 @@ def transform_file(file_path):
         content = f.read()
 
     file_name = os.path.basename(file_path)
-    is_research_subdir = 'research/' in file_path and file_name != 'research.html'
+    # Cross-platform check for 'research' directory
+    is_research_subdir = 'research' in file_path.split(os.path.sep) and file_name != 'research.html'
     rel_root = '../' if is_research_subdir else ''
     rel_research = '' if is_research_subdir else 'research/'
     
@@ -102,7 +103,9 @@ def transform_file(file_path):
         if is_research_subdir:
             new_sidebar_inner += get_research_sidebar(rel_research) + "\n"
             
-        content = content.replace(old_sidebar_inner, new_sidebar_inner)
+        # Use span-based replacement to avoid the 'replace("", ...)' trap
+        start, end = sidebar_match.span(1)
+        content = content[:start] + new_sidebar_inner + content[end:]
 
     # 4. Remove Footer
     content = re.sub(r'<footer>.*?</footer>', '', content, flags=re.DOTALL)
@@ -120,7 +123,11 @@ def transform_file(file_path):
     with open(file_path, 'w', encoding='utf-8') as f:
         f.write(content)
 
-root_dir = "/home/sin9ularity/Documents/Selvvalgt_fordybelse/Valgfag/docs"
+# Use current working directory
+root_dir = os.path.join(os.getcwd())
+if os.path.basename(root_dir) != 'docs':
+    # If we're in the git root, the files are in docs/
+    root_dir = os.path.join(root_dir, 'docs')
 files_to_process = [
     "index.html", "analysis.html", "learning-objectives.html", "research.html",
     "demonstration.html", "mitigation.html", "reflections.html"
