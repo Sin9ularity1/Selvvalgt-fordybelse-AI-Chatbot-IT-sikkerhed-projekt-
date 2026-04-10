@@ -28,7 +28,7 @@ function renderSidebar() {
     const navLinks = [];
 
     sections.forEach(section => {
-        if (section.id === 'hero' || section.id === 'research-home') return;
+        if (section.id === 'hero') return;
         
         const header = section.querySelector('h1, h2, h3');
         if (header) {
