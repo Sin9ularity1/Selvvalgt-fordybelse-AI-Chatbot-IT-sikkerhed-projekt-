@@ -1,4 +1,4 @@
-# Appendix 3: LLM01 Prompt Injection
+# Appendix 4: LLM01 Prompt Injection
 
 ## 1. What is Prompt Injection
 

@@ -1,4 +1,4 @@
-# Appendix 2b: Problem Statement
+# Appendix 3: Problem Statement
 
 ## 1. Problem Statement
 Generative AI systems introduce new attack surfaces and amplify existing cyber threat vectors in ways that traditional security frameworks do not fully address. This project investigates both vulnerabilities within AI-driven applications (based on the OWASP Top 10 for Large Language Models v2.0) and the misuse of AI as an offensive tool in modern cybersecurity contexts.

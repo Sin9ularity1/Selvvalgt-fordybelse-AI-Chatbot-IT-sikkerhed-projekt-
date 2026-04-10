@@ -1,4 +1,4 @@
-# Appendix 5: LLM03 Supply Chain Risks
+# Appendix 6: LLM03 Supply Chain Risks
 
 ## 1. What is Supply Chain Vulnerability
 

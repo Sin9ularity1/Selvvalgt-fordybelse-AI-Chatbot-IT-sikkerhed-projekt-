@@ -1,4 +1,4 @@
-# Appendix 8: LLM06 Excessive Agency
+# Appendix 9: LLM06 Excessive Agency
 
 ## 1. What is Excessive Agency
 

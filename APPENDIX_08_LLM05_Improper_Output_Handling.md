@@ -1,4 +1,4 @@
-# Appendix 7: LLM05 Improper Output Handling
+# Appendix 8: LLM05 Improper Output Handling
 
 ## 1. What is Improper Output Handling
 

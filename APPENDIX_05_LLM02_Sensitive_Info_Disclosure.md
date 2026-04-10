@@ -1,4 +1,4 @@
-# Appendix 4: LLM02 Sensitive Info Disclosure
+# Appendix 5: LLM02 Sensitive Info Disclosure
 
 ## 1. What is Sensitive Information Disclosure
 

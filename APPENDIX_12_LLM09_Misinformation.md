@@ -1,4 +1,4 @@
-# Appendix 11: LLM09 Misinformation
+# Appendix 12: LLM09 Misinformation
 
 ## 1. What is Misinformation
 

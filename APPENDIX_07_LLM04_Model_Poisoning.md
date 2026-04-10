@@ -1,4 +1,4 @@
-# Appendix 6: LLM04 Model Poisoning
+# Appendix 7: LLM04 Model Poisoning
 
 ## 1. What is Data and Model Poisoning
 

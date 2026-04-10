@@ -1,4 +1,4 @@
-# Appendix 9: LLM07 System Prompt Leakage
+# Appendix 10: LLM07 System Prompt Leakage
 
 ## 1. What is System Prompt Leakage
 

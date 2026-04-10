@@ -1,4 +1,4 @@
-# Appendix 10: LLM08 Vector Weaknesses
+# Appendix 11: LLM08 Vector Weaknesses
 
 ## 1. What is Vector and Embedding Weaknesses
 

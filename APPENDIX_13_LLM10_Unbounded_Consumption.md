@@ -1,4 +1,4 @@
-# Appendix 12: LLM10 Unbounded Consumption
+# Appendix 13: LLM10 Unbounded Consumption
 
 ## 1. What is Unbounded Consumption
 
