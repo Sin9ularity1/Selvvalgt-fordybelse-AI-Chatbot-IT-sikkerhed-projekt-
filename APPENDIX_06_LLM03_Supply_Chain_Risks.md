@@ -2,7 +2,7 @@
 
 ## 1. What is Supply Chain Vulnerability
 
-LLM Supply Chain Vulnerability refers to risks affecting the integrity of training data, pre-trained models, and deployment platforms (OWASPGenAIProject Editor, 2025).
+LLM Supply Chain Vulnerability refers to risks affecting the integrity of training data, pre-trained models, and deployment platforms (OWASP Foundation, 2025).
 The supply chain for LLMs is complex and includes data scrapers, model providers, third-party libraries, and cloud infrastructure.
 
 Vulnerabilities at any point in this chain can lead to biased outputs, security breaches, system failures, or the introduction of hidden backdoors into the model.
@@ -47,7 +47,3 @@ According to OWASP, securing the LLM supply chain requires a proactive and multi
 <dt>Scenario #3: Poisoned Training Data</dt>
 <dd>An attacker poisons a public dataset used for model alignment, causing the model to provide harmful instructions when specifically prompted.</dd>
 </dl>
-
-## 5. References
-
-- OWASPGenAIProject Editor. (2025). LLM03: Supply Chain. https://genai.owasp.org/llmrisk/llm032025-supply-chain/

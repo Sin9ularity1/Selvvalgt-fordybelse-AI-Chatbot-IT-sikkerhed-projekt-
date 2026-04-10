@@ -2,7 +2,7 @@
 
 ## 1. What is Sensitive Information Disclosure
 
-Sensitive information disclosure occurs when a Large Language Model (LLM) exposes personal, financial, health, business, or proprietary data (OWASPGenAIProject Editor, 2025).
+Sensitive information disclosure occurs when a Large Language Model (LLM) exposes personal, financial, health, business, or proprietary data (OWASP Foundation, 2025).
 This can include training data, confidential algorithms, security credentials, or legal documents.
 
 Such disclosures can result in privacy violations, unauthorized access, or intellectual property breaches.
@@ -64,7 +64,3 @@ Organizations should implement multiple layers of safeguards to minimize the ris
 <dt>Scenario #3: Data Leak via Training Data</dt>
 <dd>Negligent inclusion of sensitive data in training leads to exposure in model outputs.</dd>
 </dl>
-
-## 5. References
-
-- OWASPGenAIProject Editor. (2025). LLM02: Sensitive Information Disclosure. https://genai.owasp.org/llmrisk/llm022025-sensitive-information-disclosure/

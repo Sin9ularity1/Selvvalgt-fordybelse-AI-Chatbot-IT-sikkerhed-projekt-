@@ -2,7 +2,7 @@
 
 ## 1. What is System Prompt Leakage
 
-System Prompt Leakage is the risk that internal instructions used to steer an LLM behavior may contain sensitive information not intended for users. While the prompt itself is a set of instructions, its disclosure can facilitate other attacks if it contains credentials or internal rules (OWASPGenAIProject Editor, 2025). 
+System Prompt Leakage is the risk that internal instructions used to steer an LLM behavior may contain sensitive information not intended for users. While the prompt itself is a set of instructions, its disclosure can facilitate other attacks if it contains credentials or internal rules (OWASP Foundation, 2025). 
 
 Disclosure reveals the model internal guardrails, which can then be systematically bypassed by attackers.
 
@@ -46,7 +46,3 @@ According to OWASP guidance, risk can be significantly reduced through the follo
 <dd>An attacker discovers internal banking rules from a chatbot prompt and uses that knowledge to manipulate a transaction request.</dd>
 
 </dl>
-
-## 5. References
-
-- OWASPGenAIProject Editor. (2025). LLM07: System Prompt Leakage. https://genai.owasp.org/llmrisk/llm072025-system-prompt-leakage/
