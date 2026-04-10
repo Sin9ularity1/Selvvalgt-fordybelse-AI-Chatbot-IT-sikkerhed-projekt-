@@ -47,32 +47,28 @@ function renderSidebar() {
             </ul>`;
     }
 
-    // 3. Research Topics (Only on research pages)
-    let researchNavHtml = "";
-    if (isResearchHome || isSubPage) {
-        const githubBase = "https://github.com/Sin9ularity1/Valgfag-Generative-AI-Misbrug/blob/main/";
-        const topics = [
-            { name: "LLM01: Prompt Injection", href: githubBase + "APPENDIX_03_LLM01_Prompt_Injection.md" },
-            { name: "LLM02: Sensitive Info", href: githubBase + "APPENDIX_04_LLM02_Sensitive_Info_Disclosure.md" },
-            { name: "LLM03: Supply Chain", href: githubBase + "APPENDIX_05_LLM03_Supply_Chain_Risks.md" },
-            { name: "LLM04: Model Poisoning", href: githubBase + "APPENDIX_06_LLM04_Model_Poisoning.md" },
-            { name: "LLM05: Output Handling", href: githubBase + "APPENDIX_07_LLM05_Improper_Output_Handling.md" },
-            { name: "LLM06: Excessive Agency", href: githubBase + "APPENDIX_08_LLM06_Excessive_Agency.md" },
-            { name: "LLM07: Prompt Leakage", href: githubBase + "APPENDIX_09_LLM07_System_Prompt_Leakage.md" },
-            { name: "LLM08: Vector Weaknesses", href: githubBase + "APPENDIX_10_LLM08_Vector_Weaknesses.md" },
-            { name: "LLM09: Misinformation", href: githubBase + "APPENDIX_11_LLM09_Misinformation.md" },
-            { name: "LLM10: Unbounded Consumption", href: githubBase + "APPENDIX_12_LLM10_Unbounded_Consumption.md" }
-        ];
+    // 3. Research Topics (Visible on all pages now)
+    const githubBase = "https://github.com/Sin9ularity1/Valgfag-Generative-AI-Misbrug/blob/main/";
+    const topics = [
+        { name: "LLM01: Prompt Injection", href: githubBase + "APPENDIX_03_LLM01_Prompt_Injection.md" },
+        { name: "LLM02: Sensitive Info", href: githubBase + "APPENDIX_04_LLM02_Sensitive_Info_Disclosure.md" },
+        { name: "LLM03: Supply Chain", href: githubBase + "APPENDIX_05_LLM03_Supply_Chain_Risks.md" },
+        { name: "LLM04: Model Poisoning", href: githubBase + "APPENDIX_06_LLM04_Model_Poisoning.md" },
+        { name: "LLM05: Output Handling", href: githubBase + "APPENDIX_07_LLM05_Improper_Output_Handling.md" },
+        { name: "LLM06: Excessive Agency", href: githubBase + "APPENDIX_08_LLM06_Excessive_Agency.md" },
+        { name: "LLM07: Prompt Leakage", href: githubBase + "APPENDIX_09_LLM07_System_Prompt_Leakage.md" },
+        { name: "LLM08: Vector Weaknesses", href: githubBase + "APPENDIX_10_LLM08_Vector_Weaknesses.md" },
+        { name: "LLM09: Misinformation", href: githubBase + "APPENDIX_11_LLM09_Misinformation.md" },
+        { name: "LLM10: Unbounded Consumption", href: githubBase + "APPENDIX_12_LLM10_Unbounded_Consumption.md" }
+    ];
 
-        researchNavHtml = `
-            <h2 style="margin-top: 2rem;">Research Topics</h2>
-            <ul class="nav-contextual topics-list">
-                ${topics.map(topic => `<li><a href="${topic.href}" target="_blank">${topic.name}</a></li>`).join('')}
-            </ul>`;
-    }
+    const researchNavHtml = `
+        <h2 style="margin-top: 2rem;">Research Appendices</h2>
+        <ul class="nav-contextual topics-list">
+            ${topics.map(topic => `<li><a href="${topic.href}" target="_blank">${topic.name}</a></li>`).join('')}
+        </ul>`;
 
     // 4. Technical Appendix Section (Always bottom)
-    const githubBase = "https://github.com/Sin9ularity1/Valgfag-Generative-AI-Misbrug/blob/main/";
     const appendixHtml = `
         <h2 style="margin-top: 2rem;">Technical Appendix</h2>
         <ul>
