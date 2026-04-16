@@ -46,50 +46,27 @@
     <main class="content">
     <section id="hero">
         <h1>GenAI Vulnerabilities</h1>
-        <p class="lead">Systematic research into the exploitation and defense of Large Language Models within modern cybersecurity frameworks. This research aims to provide technical insight into the various ways generative AI can be misused and how these emerging attack vectors function in practice, bridging the gap between theoretical risk and real-world implementation.</p>
+        <p class="lead">This elective project investigates the technical misuse of generative AI in cybersecurity. By mapping the <strong>OWASP Top 10 for LLMs</strong> and performing practical red-teaming, this research bridges the gap between theoretical risk and real-world implementation, focusing on concrete attack vectors like prompt injection and automated social engineering.</p>
     </section>
 
-    <section id="om_projektet">
-        <h2>1. About the Project</h2>
-        <p>This elective project investigates the misuse of generative artificial intelligence (GenAI) in cybersecurity, focusing on concrete attack techniques such as prompt injection, AI-supported phishing, and social engineering (OWASP Foundation, 2025).</p>
-        <p>The goal is to identify central vulnerabilities in modern GenAI systems, analyze relevant attack vectors, and evaluate technical countermeasures to strengthen security in an AI-driven threat model.</p>
-    </section>
-
-    <section id="project-contents">
-        <h2>Project Contents</h2>
-        <ul style="margin-top: 1rem; color: var(--text-secondary); line-height: 1.8;">
-            <li><strong><a href="index.html">Home</a></strong>: Introduction to the project, problem statement, scope, and overall reflections.</li>
-            <li><strong><a href="learning-objectives.html">Learning Objectives</a></strong>: Targeted knowledge, skills, and competencies for the elective.</li>
-            <li><strong><a href="research.html">Research</a></strong>: Technical overview of the OWASP Top 10 for LLMs and remediation strategies.</li>
-            <li><strong><a href="analysis.html">Analysis</a></strong>: Deep dive into architectural weaknesses and the GenAI attack surface.</li>
-            <li><strong><a href="demonstration.html">Demonstration</a></strong>: Practical proof-of-concept and technical red-teaming demonstration.</li>
-            <li><strong><a href="references.html">References</a></strong>: Bibliography of all academic and technical sources (APA 7th Edition).</li>
-        </ul>
-    </section>
-
-    <section id="motivation">
-        <h2>2. Motivation</h2>
-        <p>As a student of IT security, I wanted to supplement my previous focus on traditional security principles with a newer threat area. Generative AI introduces new attack surfaces that are already actively exploited, making the topic relevant both academically and practically.</p>
-    </section>
-
-    <section id="baggrund">
-        <h2>3. Background and Delimitation</h2>
-        <p>Developments in generative AI have raised broader concerns regarding responsible use and long-term consequences (Mitchell, 2019). These discussions primarily fall under AI ethics and governance.</p>
-        <p>However, this project is <strong>delimited to the technical cybersecurity dimension</strong> and focuses specifically on how generative AI systems can be misused through concrete attacks such as prompt injection, social engineering, and automated phishing.</p>
+    <section id="context-scope">
+        <h2>1. Context, Motivation & Scope</h2>
+        <p>As an IT security student, I aimed to supplement traditional security principles with the emerging threat landscape of Large Language Models (LLMs). While AI development often follows a "build first, fix later" mindset, this project focuses strictly on the <strong>technical cybersecurity dimension</strong>—analyzing how these systems can be exploited and defended.</p>
+        <p>The scope is delimited to technical vulnerabilities such as prompt injection and excessive agency, intentionally excluding broader discussions on AI ethics and governance to maintain a dedicated security focus.</p>
     </section>
 
     <section id="problem-statement">
-        <h2>4. Problem Statement & Scope</h2>
-        <p>Generative AI systems introduce new attack surfaces and amplify existing cyber threat vectors in ways that traditional security frameworks do not fully address. This project systematically maps these vulnerabilities through a combination of literature study of the OWASP Top 10 for LLMs (OWASP Foundation, 2025) and practical testing of attack vectors such as prompt injection and AI-assisted social engineering.</p>
+        <h2>2. Problem Statement</h2>
+        <p>Generative AI introduces new attack surfaces that traditional security frameworks do not fully address. This project systematically maps these vulnerabilities through a literature study of the OWASP Top 10 and practical testing in a local, controlled environment.</p>
         <a href="https://github.com/Sin9ularity1/Valgfag-Generative-AI-Misbrug/blob/main/APPENDIX_03_Problemstatement.md" target="_blank" class="button">View Full Problem Statement &rarr;</a>
     </section>
 
     <section id="milepaele">
-        <h2>5. Milestones and Timeline</h2>
+        <h2>3. Milestones and Timeline</h2>
         <table>
         <thead>
         <tr>
-        <th>Week</th>
+        <th>Weeks</th>
         <th>Activity</th>
         <th>Output</th>
         </tr>
@@ -97,50 +74,35 @@
         <tbody>
         <tr>
         <td>6</td>
-        <td>Orientation, project delimitation, and GitHub Pages setup</td>
-        <td>Basic structure for project website</td>
+        <td>Orientation and project delimitation</td>
+        <td>Basic site structure</td>
         </tr>
         <tr>
-        <td>7–8</td>
-        <td>Literature study: OWASP Top 10 for LLMs and GenAI misuse</td>
-        <td>Overview of threat landscape</td>
-        </tr>
-        <tr>
-        <td>9–10</td>
-        <td>Analysis of concrete attack types (prompt injection, phishing, social engineering)</td>
-        <td>Documented misuse scenarios</td>
-        </tr>
-        <tr>
-        <td>11–12</td>
-        <td>Identification of central vulnerabilities and mapping of attack surfaces</td>
-        <td>List of technical weaknesses</td>
+        <td>7–12</td>
+        <td>OWASP Top 10 research & Vulnerability Analysis</td>
+        <td>Threat landscape mapping</td>
         </tr>
         <tr>
         <td>13–14</td>
-        <td>Analysis of technical countermeasures and security frameworks</td>
-        <td>Mitigation mapping and defensive strategies</td>
+        <td>Technical countermeasures and framework study</td>
+        <td>Defensive strategy mapping</td>
         </tr>
         <tr>
-        <td>15</td>
-        <td>Selected illustrative scenarios and limited practical demonstrations</td>
-        <td>Research and examples</td>
-        </tr>
-        <tr>
-        <td>16</td>
-        <td>Collection of results, documentation, and preparation of video presentation</td>
-        <td>Finished website + video draft</td>
+        <td>15–16</td>
+        <td>Practical demonstrations and documentation</td>
+        <td>Red-teaming PoCs & Final site</td>
         </tr>
         <tr>
         <td>17</td>
         <td>Final submission</td>
-        <td>Project website and video presentation</td>
+        <td>Finished project delivery</td>
         </tr>
         </tbody>
         </table>
     </section>
 
     <section id="reflections">
-        <h2>6. Reflections</h2>
+        <h2>4. Reflections</h2>
         <p><strong>General:</strong> When the project was first being planned, the original idea was to create an LLM from scratch, or at least implement parts of one. However, this approach was not viable, as developing an LLM falls more within the field of machine learning and computer science than IT security. As a result, the focus of the project was shifted away from the development of AI systems toward the misuse of generative AI. This allowed the project to remain within the broader AI domain while aligning more closely with the objectives of IT security, facilitating a shift towards an "attacker's perspective" and a dedicated security mindset.</p>
         <p><strong>Planning:</strong> The Project milestones and timeplan was created at the start of the project. It was designed to give direction and plan what needed to be done with some sort of order (I.e. Research before Analysis). The timeplan has been relatively accurate through the completion of the project, however, in the earlier stages of the project, it was easier to find time to work and complete tasks than it is now in the later stages.</p>
         <p><strong>Project Synthesis:</strong> Ultimately, this project has transformed my view of Generative AI from a productivity tool into a complex attack surface. By systematically applying an "attacker's mindset" to LLMs, I have learned that the most significant risks aren't just technical bugs, but fundamental design choices in how these models process information. This experience has been invaluable in bridging the gap between traditional IT security and the emerging challenges of AI-driven systems.</p>
