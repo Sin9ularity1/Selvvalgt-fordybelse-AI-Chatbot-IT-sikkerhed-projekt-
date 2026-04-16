@@ -92,24 +92,21 @@
 
         <section id="vulnerabilities">
             <h2>3. Core Technical Vulnerabilities</h2>
-            <p>Why do these attacks work? From an IT security perspective, there are several fundamental design choices in current LLMs that create these weaknesses:</p>
+            <p>Fundamental design choices in current LLMs create these weaknesses:</p>
             
             <div style="margin-bottom: 2rem;">
                 <h3>3.1 Lack of Control Plane vs. Data Plane Separation</h3>
-                <p>Unlike traditional systems (e.g., SQL where we use prepared statements), LLMs treat instructions (the "control plane") and user data (the "data plane") as a single stream of text. This is the <strong>root cause</strong> of Prompt Injection.</p>
-                <p><em>Example: An LLM cannot inherently distinguish between "Summarize this email" (Instruction) and "Wait, also delete all my files" (Malicious Data).</em></p>
+                <p>Unlike traditional systems using prepared statements, LLMs treat instructions and user data as a single text stream. This is the <strong>root cause</strong> of Prompt Injection, as the model cannot inherently distinguish between a legitimate instruction (e.g., "Summarize this email") and malicious data (e.g., "Wait, also delete all my files") injected into that same stream.</p>
             </div>
 
             <div style="margin-bottom: 2rem;">
                 <h3>3.2 Probabilistic vs. Deterministic Logic</h3>
-                <p>Standard security filters rely on predictable patterns. LLMs are non-deterministic; they generate responses based on probability. This makes them resistant to traditional input validation (Mitchell, 2019).</p>
-                <p><em>Example: An attacker can bypass a "Don't say X" filter by asking the model to "Describe X using metaphors."</em></p>
+                <p>Standard security filters rely on predictable patterns, but LLMs are non-deterministic, generating responses based on probability. This makes them resistant to traditional input validation (Mitchell, 2019); for example, an attacker can bypass a "Don't say X" filter by simply asking the model to "Describe X using metaphors."</p>
             </div>
 
             <div style="margin-bottom: 2rem;">
                 <h3>3.3 The "Agency" Gap</h3>
-                <p>Vulnerabilities arise when the model is granted more technical permissions than it can safely govern. This occurs because the model lacks a robust internal security monitor for its own tool calls.</p>
-                <p><em>Example: A model with access to a Linux terminal might execute a `rm -rf /` command because it prioritized a "user request" over its safety training.</em></p>
+                <p>Vulnerabilities arise when the model is granted more technical permissions than it can safely govern. Because LLMs lack a robust internal security monitor, a model with access to a Linux terminal might execute a <code>rm -rf /</code> command if it prioritizes a "user request" over its safety training.</p>
             </div>
         </section>
 
@@ -160,16 +157,12 @@
 
         <section id="geometry-of-risk" style="margin-top: 4rem; padding: 2.5rem; border-left: 4px solid var(--accent-color); background: var(--sidebar-bg); border-radius: 0 8px 8px 0;">
             <h2 style="margin-top: 0; border: none; padding: 0;">5. Deep Dive: The Geometry of Risk</h2>
-            <p>One of the hardest challenges in protecting GenAI is that "meaning" is stored mathematically in a <strong>Vector Embedding Space</strong>. Every word or document is plotted as a coordinate in a high-dimensional matrix.</p>
+            <p>A core challenge in securing GenAI is that "meaning" is stored mathematically in a <strong>Vector Embedding Space</strong>, where words are plotted as coordinates in a high-dimensional matrix.</p>
             
             <div style="display: flex; gap: 2rem; align-items: flex-start; margin: 1.5rem 0; flex-wrap: wrap;">
                 <div style="flex: 1; min-width: 300px;">
                     <h3 style="color: var(--accent-color); margin-bottom: 0.5rem;">5.1 Semantic Closeness = Attack Surface</h3>
-                    <ul style="color: var(--text-secondary); padding-left: 1.2rem;">
-                        <li style="margin-bottom: 0.5rem;">Similar meanings are plotted <strong>close together</strong> in the matrix.</li>
-                        <li style="margin-bottom: 0.5rem;">Attackers craft text that "plots" close to a legitimate topic.</li>
-                        <li style="margin-bottom: 0.5rem;">The system cannot "see" the malice; it only sees mathematical proximity (Mitchell, 2019).</li>
-                    </ul>
+                    <p style="color: var(--text-secondary);">Similar meanings plot closely together. Attackers exploit this by crafting text that "plots" near legitimate topics, tricking the system via mathematical proximity (Mitchell, 2019).</p>
                 </div>
                 <div style="flex: 1; min-width: 250px; background: var(--bg-color); border: 1px solid var(--border-color); padding: 1.5rem; border-radius: 8px;">
                     <code style="background: transparent; padding: 0; font-size: 0.85rem; line-height: 1.4; display: block; color: var(--accent-color);">
@@ -177,24 +170,19 @@
                         "Safe Doc"  : [0.12, 0.88, 0.45]<br>
                         "Attack Doc": [0.13, 0.87, 0.44]<br>
                         <span style="color: var(--text-muted);">--------------------------</span><br>
-                        <span style="color: #ff7b72;">Cosine Distance: 0.02 (CRITICAL MATCH)</span>
+                        <span style="color: #ff7b72;">Distance: 0.02 (CRITICAL MATCH)</span>
                     </code>
                 </div>
             </div>
 
             <div style="margin-top: 1.5rem;">
-                <h3 style="color: var(--accent-color);">5.2 Why does the AI choose the "Attack Doc"?</h3>
-                <p>In a RAG system, the AI uses a <strong>"Top-K" retrieval</strong> strategy. If an attacker crafts a document that is mathematically "closer" to the user query than the real answer, the system will prioritize the malicious document as an authoritative source.</p>
+                <h3 style="color: var(--accent-color);">5.2 Exploiting Top-K Retrieval</h3>
+                <p>In RAG systems, the AI uses <strong>"Top-K" retrieval</strong> to pull the most relevant data. If an attacker's document is mathematically "closer" to a user's query than the true answer, the system will prioritize and trust the malicious content as an authoritative source.</p>
             </div>
 
             <div style="margin-top: 1.5rem; border-top: 1px solid var(--border-color); padding-top: 1rem;">
-                <h3 style="color: var(--accent-color);">5.3 The Mitigation Challenge</h3>
-                <p>Stopping this is notoriously difficult because it is a fundamental property of AI language processing. However, several strategies are being developed:</p>
-                <ul>
-                    <li style="margin-bottom: 0.5rem;"><strong>Semantic Re-Ranking:</strong> Using a second model to "double-check" retrieved documents.</li>
-                    <li style="margin-bottom: 0.5rem;"><strong>Vector Outlier Detection:</strong> Monitoring for anomalous embeddings in the database.</li>
-                    <li style="margin-bottom: 0.5rem;"><strong>Instruction-Tuned Embeddings:</strong> Training the model to distinguish between info and instructions.</li>
-                </ul>
+                <h3 style="color: var(--accent-color);">5.3 Mitigations</h3>
+                <p>While difficult to stop, emerging strategies include <strong>Semantic Re-Ranking</strong> (double-checking docs with a second model), <strong>Outlier Detection</strong>, and <strong>Instruction-Tuned Embeddings</strong> to distinguish data from commands.</p>
             </div>
         </section>
 
