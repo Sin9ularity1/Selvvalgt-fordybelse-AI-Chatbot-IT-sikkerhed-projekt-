@@ -133,7 +133,7 @@
                     <tr style="border-bottom: 1px solid var(--border-color);">
                         <td style="padding: 1rem;"><strong>Adversarial Suffixes</strong></td>
                         <td style="padding: 1rem;">
-                            Appending mathematically optimized character strings that force the model to ignore safety training.
+                            Appending mathematically optimized character strings that force the model to ignore safety training (Zou et al., 2023).
                         </td>
                         <td style="padding: 1rem;"><strong>Model Hijacking:</strong> Jailbreaks the model by exploiting the underlying mathematical weights of the neural network.</td>
                     </tr>
@@ -177,7 +177,7 @@
 
             <div style="margin-top: 1.5rem;">
                 <h3 style="color: var(--accent-color);">5.2 Exploiting Top-K Retrieval</h3>
-                <p>In RAG systems, the AI uses <strong>"Top-K" retrieval</strong> to pull the most relevant data. If an attacker's document is mathematically "closer" to a user's query than the true answer, the system will prioritize and trust the malicious content as an authoritative source.</p>
+                <p>In RAG systems, the AI uses <strong>"Top-K" retrieval</strong> to pull the most relevant data. If an attacker's document is mathematically "closer" to a user's query than the true answer, the system will prioritize and trust the malicious content. Recent research demonstrates that optimized "poisoned" documents can achieve a 90% attack success rate by corrupting the model's retrieved knowledge (Zou et al., 2024).</p>
             </div>
 
             <div style="margin-top: 1.5rem; border-top: 1px solid var(--border-color); padding-top: 1rem;">
@@ -228,7 +228,7 @@
 
         <section id="reflections" style="margin-top: 4rem; padding-top: 2rem; border-top: 1px solid var(--border-color);">
             <h2>7. Reflections: Architectural Analysis</h2>
-            <p><strong>Defense:</strong> My interest in AI security was partly influenced by prominent figures in the field, such as Yoshua Bengio and Geoffrey Hinton, both of whom are widely regarded as pioneers of modern artificial intelligence. Their foundational work in neural networks helped enable the rapid development of today’s AI systems. However, their more recent warnings about the risks of advanced AGI (Artificial General Intelligence) and potential loss of control highlighted that these technologies may pose serious security concerns. This shift in perspective contributed to viewing AI not only as an innovation, but also as a potential attack surface that requires careful analysis.</p>
+            <p><strong>Defense:</strong> My interest in AI security was partly influenced by prominent figures in the field, such as Yoshua Bengio and Geoffrey Hinton, both of whom are widely regarded as pioneers of modern artificial intelligence. Their foundational work in neural networks helped enable the rapid development of today’s AI systems. However, their more recent warnings about the risks of advanced AGI (Artificial General Intelligence) and potential loss of control—formalized in high-profile statements like the 2023 <em>Statement on AI Risk</em>—highlighted that these technologies may pose serious security concerns (Center for AI Safety, 2023; Bengio et al., 2024). This shift in perspective contributed to viewing AI not only as an innovation, but also as a potential attack surface that requires careful analysis.</p>
             <p>In addition, the rapid pace of AI development often follows a “build first, fix later” mindset rather than a security-first approach. This becomes particularly concerning given the trajectory towards AGI and the current applications of LLMs in high-impact domains such as medicine, military systems, and scientific research. If such systems were to become widely accessible without sufficient safeguards, even a single vulnerable user or attacker could potentially misuse them in ways that have large-scale consequences. For this reason, AI security should be treated as a fundamental requirement rather than an afterthought.</p>
             <p><strong>Structural Insight:</strong> This project’s focus on the OWASP Top 10 for LLMs serves as a practical starting point for addressing these broader risks at a technical level. Analyzing the architectural layers of GenAI systems has shifted my perspective from seeing "bugs" to seeing <strong>structural weaknesses</strong>. The realization that the root cause of many vulnerabilities is the lack of a "Control Plane vs. Data Plane" separation was a significant breakthrough in my technical understanding. This phase has taught me that securing AI is not just about filtering "bad words," but about redesigning the interfaces through which models interact with the world. It has emphasized the necessity of <strong>Defense in Depth</strong>—applying security at the prompt, the RAG retrieval, and the tool-call layers simultaneously.</p>
         </section>

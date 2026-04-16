@@ -61,7 +61,7 @@
                         <h2>Prompt Injection</h2>
                     </div>
                     <div class="vulnerability-body">
-                        <p><strong>Description:</strong> Manipulating LLM behavior via crafted inputs to bypass safety filters or execute unauthorized actions (OWASP Foundation, 2025). This targets the model's reasoning process rather than a parser, allowing attackers to socially engineer the AI into unsafe behavior through direct (user input) or indirect (web pages, files) instructions.</p>
+                        <p><strong>Description:</strong> Manipulating LLM behavior via crafted inputs to bypass safety filters or execute unauthorized actions (OWASP Foundation, 2025). This targets the model's reasoning process rather than a parser, allowing attackers to socially engineer the AI into unsafe behavior through direct (user input) or indirect instructions—where malicious commands are hidden in data sources like web pages or emails (Greshake et al., 2023).</p>
                         <p><strong>Key Remediations:</strong></p>
                         <ul>
                             <li>Use strong, boundary-defining system prompts.</li>
@@ -187,7 +187,7 @@
                         <h2>Vector Weaknesses</h2>
                     </div>
                     <div class="vulnerability-body">
-                        <p><strong>Description:</strong> Security risks in systems using Retrieval Augmented Generation (RAG) (OWASP Foundation, 2025). Weaknesses in how vectors are generated, stored, or retrieved can lead to unauthorized data access or the injection of harmful knowledge.</p>
+                        <p><strong>Description:</strong> Security risks in systems using Retrieval Augmented Generation (RAG) (OWASP Foundation, 2025). Weaknesses in how vectors are generated, stored, or retrieved can lead to unauthorized data access or the injection of harmful knowledge; research has shown that injecting as few as five poisoned documents can dominate retrieval results (Zou et al., 2024).</p>
                         <p><strong>Key Remediations:</strong></p>
                         <ul>
                             <li>Implement permission-aware retrieval within the vector database.</li>
