@@ -61,7 +61,7 @@
                         <h2>Prompt Injection</h2>
                     </div>
                     <div class="vulnerability-body">
-                        <p><strong>Description:</strong> Manipulating LLM behavior via crafted inputs to bypass safety filters or execute unauthorized actions. This targets the model's reasoning process rather than a parser, allowing attackers to socially engineer the AI into unsafe behavior through direct (user input) or indirect (web pages, files) instructions.</p>
+                        <p><strong>Description:</strong> Manipulating LLM behavior via crafted inputs to bypass safety filters or execute unauthorized actions (OWASP Foundation, 2025). This targets the model's reasoning process rather than a parser, allowing attackers to socially engineer the AI into unsafe behavior through direct (user input) or indirect (web pages, files) instructions.</p>
                         <p><strong>Key Remediations:</strong></p>
                         <ul>
                             <li>Use strong, boundary-defining system prompts.</li>
@@ -79,7 +79,7 @@
                         <h2>Sensitive Info Disclosure</h2>
                     </div>
                     <div class="vulnerability-body">
-                        <p><strong>Description:</strong> Accidental revelation of confidential data, PII, or proprietary secrets through model outputs. This can occur if sensitive data is included in training sets or if a model is manipulated into revealing its internal configuration or user-specific data.</p>
+                        <p><strong>Description:</strong> Accidental revelation of confidential data, PII, or proprietary secrets through model outputs (OWASP Foundation, 2025). This can occur if sensitive data is included in training sets or if a model is manipulated into revealing its internal configuration or user-specific data.</p>
                         <p><strong>Key Remediations:</strong></p>
                         <ul>
                             <li>Sanitize and scrub sensitive content from training datasets.</li>
@@ -97,7 +97,7 @@
                         <h2>Supply Chain Risks</h2>
                     </div>
                     <div class="vulnerability-body">
-                        <p><strong>Description:</strong> Vulnerabilities arising from third-party components, datasets, and pre-trained models. Compromises at any point in the supply chain—from data scrapers to model hubs—can introduce hidden backdoors, biases, or malware.</p>
+                        <p><strong>Description:</strong> Vulnerabilities arising from third-party components, datasets, and pre-trained models (OWASP Foundation, 2025). Compromises at any point in the supply chain—from data scrapers to model hubs—can introduce hidden backdoors, biases, or malware.</p>
                         <p><strong>Key Remediations:</strong></p>
                         <ul>
                             <li>Rigorously vet all third-party data and pre-trained model sources.</li>
@@ -115,7 +115,7 @@
                         <h2>Model Poisoning</h2>
                     </div>
                     <div class="vulnerability-body">
-                        <p><strong>Description:</strong> Intentionally corrupting training data or fine-tuning processes to introduce vulnerabilities, backdoors, or biases. This compromises the model's fundamental reasoning and can be used to bypass security controls or spread misinformation.</p>
+                        <p><strong>Description:</strong> Intentionally corrupting training data or fine-tuning processes to introduce vulnerabilities, backdoors, or biases. This compromises the model's fundamental reasoning and can be used to bypass security controls or spread misinformation (OWASP Foundation, 2025).</p>
                         <p><strong>Key Remediations:</strong></p>
                         <ul>
                             <li>Strictly track and verify the lineage of all training data.</li>
@@ -133,7 +133,7 @@
                         <h2>Improper Output Handling</h2>
                     </div>
                     <div class="vulnerability-body">
-                        <p><strong>Description:</strong> Failure to validate, sanitize, and handle LLM-generated content before passing it to downstream systems. This can enable traditional attacks like XSS, SQL injection, and Remote Code Execution (RCE) via the model's output.</p>
+                        <p><strong>Description:</strong> Failure to validate, sanitize, and handle LLM-generated content before passing it to downstream systems (OWASP Foundation, 2025). This can enable traditional attacks like XSS, SQL injection, and Remote Code Execution (RCE) via the model's output.</p>
                         <p><strong>Key Remediations:</strong></p>
                         <ul>
                             <li>Apply Zero-Trust principles: treat model output as untrusted user input.</li>
@@ -151,7 +151,7 @@
                         <h2>Excessive Agency</h2>
                     </div>
                     <div class="vulnerability-body">
-                        <p><strong>Description:</strong> Granting models too much autonomy or access to sensitive functions. When a model can call tools or APIs without sufficient oversight, unexpected or manipulated outputs can lead to damaging real-world actions.</p>
+                        <p><strong>Description:</strong> Granting models too much autonomy or access to sensitive functions (OWASP Foundation, 2025). When a model can call tools or APIs without sufficient oversight, unexpected or manipulated outputs can lead to damaging real-world actions.</p>
                         <p><strong>Key Remediations:</strong></p>
                         <ul>
                             <li>Enforce the Principle of Least Privilege for all model-accessible tools.</li>
@@ -169,7 +169,7 @@
                         <h2>System Prompt Leakage</h2>
                     </div>
                     <div class="vulnerability-body">
-                        <p><strong>Description:</strong> Techniques used to extract the underlying system instructions (system prompts) that govern LLM behavior. Disclosure reveals internal guardrails and logic, which can then be bypassed by attackers.</p>
+                        <p><strong>Description:</strong> Techniques used to extract the underlying system instructions (system prompts) that govern LLM behavior (OWASP Foundation, 2025). Disclosure reveals internal guardrails and logic, which can then be bypassed by attackers.</p>
                         <p><strong>Key Remediations:</strong></p>
                         <ul>
                             <li>Externalize credentials—never include secrets or keys in system prompts.</li>
@@ -187,7 +187,7 @@
                         <h2>Vector Weaknesses</h2>
                     </div>
                     <div class="vulnerability-body">
-                        <p><strong>Description:</strong> Security risks in systems using Retrieval Augmented Generation (RAG). Weaknesses in how vectors are generated, stored, or retrieved can lead to unauthorized data access or the injection of harmful knowledge.</p>
+                        <p><strong>Description:</strong> Security risks in systems using Retrieval Augmented Generation (RAG) (OWASP Foundation, 2025). Weaknesses in how vectors are generated, stored, or retrieved can lead to unauthorized data access or the injection of harmful knowledge.</p>
                         <p><strong>Key Remediations:</strong></p>
                         <ul>
                             <li>Implement permission-aware retrieval within the vector database.</li>
@@ -205,7 +205,7 @@
                         <h2>Misinformation</h2>
                     </div>
                     <div class="vulnerability-body">
-                        <p><strong>Description:</strong> The generation of factually incorrect or "hallucinated" information. Over-reliance on unverified AI content can lead to security breaches, legal liability, and reputational damage.</p>
+                        <p><strong>Description:</strong> The generation of factually incorrect or "hallucinated" information (OWASP Foundation, 2025). Over-reliance on unverified AI content can lead to security breaches, legal liability, and reputational damage.</p>
                         <p><strong>Key Remediations:</strong></p>
                         <ul>
                             <li>Use RAG to ground model responses in verified, factual external data.</li>
@@ -223,7 +223,7 @@
                         <h2>Unbounded Consumption</h2>
                     </div>
                     <div class="vulnerability-body">
-                        <p><strong>Description:</strong> Resource exhaustion attacks (DoS) or "Denial of Wallet" via excessive inference requests. High computational costs make LLMs targets for crashing services or depleting budgets.</p>
+                        <p><strong>Description:</strong> Resource exhaustion attacks (DoS) or "Denial of Wallet" via excessive inference requests (OWASP Foundation, 2025). High computational costs make LLMs targets for crashing services or depleting budgets.</p>
                         <p><strong>Key Remediations:</strong></p>
                         <ul>
                             <li>Implement strict rate limiting and token quotas per user.</li>
