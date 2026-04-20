@@ -50,7 +50,7 @@
             
             <div style="margin-top: 2rem;">
                 <h2>The OWASP Top 10 for LLMs</h2>
-                <p>This section provides a systematic overview of generative AI misuse scenarios, focusing on the critical security risks identified by OWASP. Each entry below provides a technical summary of the vulnerability and its core remediations, bridging the gap between high-level concepts and the detailed analyses found in the appendices.</p>
+                <p>This section provides a systematic overview of generative AI misuse scenarios, focusing on the critical security risks identified by OWASP. Each entry below provides a short technical summary of the vulnerability and its core remediations. For interested readers, the full detailed analyses can be found in the appendices.</p>
             </div>
 
             <div class="vulnerability-list" style="margin-top: 3rem;">
@@ -238,7 +238,7 @@
             </div>
 
             <div class="objective-group" style="margin-top: 4rem; padding-top: 2rem; border-top: 1px solid var(--border-color);">
-                <h2>2. Reflections: Research Phase</h2>
+                <h2>Reflections</h2>
                 <p>The research phase has been a critical exercise in understanding the vast and rapidly evolving field of  security. By focusing on the <strong>OWASP Top 10 for LLMs</strong>, I was able to move beyond anecdotal "jailbreaks" and towards a professional taxonomy of risk. This process has highlighted that while many AI vulnerabilities are new, they often stem from age-old security failures—such as the lack of separation between data and instructions. Conducting this research has reinforced my ability to evaluate emerging technologies through a structured, risk-based lens.</p>
                 <p>One of the most interesting takeaways from researching the OWASP Top 10 LLM vulnerabilities has been how many of the weaknesses within AI systems stem from traditional security issues seen in web applications, such as injection attacks and improper input handling. However, what separates LLM vulnerabilities is that these attacks target not just systems, but reasoning itself. Prompt injection, for example, is essentially a form of social engineering directed at the model rather than a human. This emphasises that securing AI systems is not only about technical controls, but also about understanding how models interpret and prioritize instructions. As a result, defensive strategies must adapt to combine typical security principles with new approaches tailored to probabilistic and context-driven systems.</p>
                 <p>The research also reinforced the importance of defense-in-depth. No single mitigation—such as system prompts or output filtering—is sufficient on its own. Effective protection requires multiple overlapping controls, including input validation, access restrictions, monitoring, and human oversight.</p>
